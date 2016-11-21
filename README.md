@@ -1,4 +1,4 @@
-# pack-de-merdouille
+# 42-repository of Runi Arnsbjornson
 
 This is a git repository made by a student of 42
 usage of anything that you could find here is not prohibited
