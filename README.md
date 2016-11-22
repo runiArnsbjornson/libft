@@ -11,4 +11,7 @@ As of now the project i succeed are :
 * Piscine-Reloaded
 * Libft
 
+project failed :
+* BSQ
+
 <align=right "Runi Arnsbjornson"/>
