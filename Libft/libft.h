@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:32:18 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/11/21 13:11:44 by jdebladi         ###   ########.fr       */
+/*   Updated: 2016/11/23 12:56:36 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,17 @@ typedef struct	s_list
 
 long			ft_abs(int nb);
 int				ft_atoi(const char *str);
+int				ft_atoi_base(const char *s, int base);
 void			ft_bzero(void *s, size_t n);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isdigit(int c);
+int				ft_islower(int c);
 int				ft_isprime(int nb);
 int				ft_isprint(int c);
 int				ft_isspace(int c);
+int				ft_isupper(int c);
 char			*ft_itoa(int n);
 char			*ft_itoa_base(int n, int base);
 void			ft_lstadd(t_list **alst, t_list *new);
@@ -72,6 +75,7 @@ char			*ft_strcpy(char *dst, const char *src);
 void			ft_strdel(char **as);
 char			*ft_strdup(const char *src);
 int				ft_strequ(char const *s1, char const *s2);
+int				ft_stris(const char *s, int (*f)(char));
 void			ft_striter(char *s, void (*f)(char *));
 void			ft_striteri(char *s, void (*f)(unsigned int, char *));
 char			*ft_strjoin(char const *s1, char const *s2);

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 18:34:05 by jdebladi          #+#    #+#              #
-#    Updated: 2016/11/21 14:31:47 by jdebladi         ###   ########.fr        #
+#    Updated: 2016/11/23 15:14:40 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,9 +22,11 @@ SRC = ft_abs.c \
 	ft_isalpha.c \
 	ft_isascii.c \
 	ft_isdigit.c \
+	ft_islower.c \
 	ft_isprint.c \
 	ft_isprime.c \
 	ft_isspace.c \
+	ft_isupper.c \
 	ft_itoa.c \
 	ft_itoa_base.c \
 	ft_lstadd.c \
@@ -63,6 +65,7 @@ SRC = ft_abs.c \
 	ft_strdel.c \
 	ft_strdup.c \
 	ft_strequ.c \
+	ft_stris.c \
 	ft_striter.c \
 	ft_striteri.c \
 	ft_strjoin.c \
