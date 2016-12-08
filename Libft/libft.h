@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:32:18 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/11/23 15:47:41 by jdebladi         ###   ########.fr       */
+/*   Updated: 2016/12/08 13:47:47 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct	s_list
 
 long			ft_abs(int nb);
 int				ft_atoi(const char *str);
+int				ft_bool_strchr(const char *s, int c);
 void			ft_bzero(void *s, size_t n);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
@@ -52,6 +53,7 @@ void			*ft_memcpy(void *dst, const void *src, size_t n);
 void			ft_memdel(void **ap);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
+void 			ft_occurence(int n, char **argv);
 void			ft_putchar(char c);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putendl(char const *s);
@@ -63,7 +65,6 @@ void			ft_putstr_fd(char const *s, int fd);
 void			ft_puttab(char **tab);
 void			ft_puttab_fd(char **tab, int fd);
 int				ft_pwr(int nb, int power);
-char			*ft_realloc(char *s, size_t size);
 char			*ft_replace(const char *s, const char *old, const char *new);
 int				ft_sqrt(int n);
 char			*ft_strcat(char *s1, const char *s2);
@@ -88,6 +89,7 @@ char			*ft_strncpy(char *dst, const char *src, size_t len);
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
 char			*ft_strnew(size_t size);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
+char			*ft_strrealloc(char *s, size_t size);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strrev(char *s);
 char			**ft_strsplit(char const *s, char c);

@@ -6,7 +6,7 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 18:34:05 by jdebladi          #+#    #+#              #
-#    Updated: 2016/11/23 15:14:40 by jdebladi         ###   ########.fr        #
+#    Updated: 2016/12/08 13:48:14 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 SRC = ft_abs.c \
 	ft_atoi.c \
+	ft_bool_strchr.c \
 	ft_bzero.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
@@ -43,6 +44,7 @@ SRC = ft_abs.c \
 	ft_memdel.c \
 	ft_memmove.c \
 	ft_memset.c \
+	ft_occurence.c \
 	ft_putchar.c \
 	ft_putchar_fd.c \
 	ft_putendl.c \
@@ -54,7 +56,6 @@ SRC = ft_abs.c \
 	ft_puttab.c \
 	ft_puttab_fd.c \
 	ft_pwr.c \
-	ft_realloc.c \
 	ft_replace.c \
 	ft_sqrt.c \
 	ft_strcat.c \
@@ -79,6 +80,7 @@ SRC = ft_abs.c \
 	ft_strnequ.c \
 	ft_strnew.c \
 	ft_strnstr.c \
+	ft_strrealloc.c \
 	ft_strrchr.c \
 	ft_strrev.c \
 	ft_strsplit.c \
