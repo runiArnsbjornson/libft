@@ -1,25 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 16:45:38 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/09 12:09:54 by jdebladi         ###   ########.fr       */
+/*   Created: 2016/11/06 18:03:52 by jdebladi          #+#    #+#             */
+/*   Updated: 2016/11/09 18:29:22 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void		ft_puttab(char **tab)
+int		ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
-	while (tab[i])
+	while (s1[i] || s2[i])
 	{
-		ft_putstr(tab[i++]);
-		ft_putchar('\n');
+		if (s1[i] != s2[i] && i < n)
+			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+		i++;
 	}
+	return (0);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bsq.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 19:51:29 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/09/21 23:37:54 by jdebladi         ###   ########.fr       */
+/*   Updated: 2016/12/08 17:20:10 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int		main(int ac, char **av)
 	int		fd;
 	int		ret;
 	char	buff[BUFF_SIZE + 1];
-	t_bsq	*data;
+	t_bsq	*data = NULL;
 
 	i = 0;
 	data = ft_init_struct(data);
@@ -57,9 +57,11 @@ int		main(int ac, char **av)
 				return (ft_puterror(1));
 			while ((ret = read(fd, buff, BUFF_SIZE)))
 			{
-				buff[ret] = 0;
+				buff[ret] = '\0';
+				printf("test1\n");
 				check_map(buff, data);
 			}
+			printf("test2\n");
 		}
 		ft_resolve(data);
 	}

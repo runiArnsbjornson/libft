@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 16:45:38 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/09 12:09:54 by jdebladi         ###   ########.fr       */
+/*   Created: 2016/11/02 18:55:12 by jdebladi          #+#    #+#             */
+/*   Updated: 2016/11/06 17:48:03 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void		ft_puttab(char **tab)
+size_t	ft_strlen(const char *str)
 {
-	size_t	i;
+	int i;
 
 	i = 0;
-	while (tab[i])
-	{
-		ft_putstr(tab[i++]);
-		ft_putchar('\n');
-	}
+	while (str[i])
+		i++;
+	return (i);
 }

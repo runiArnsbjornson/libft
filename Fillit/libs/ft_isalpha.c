@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab.c                                        :+:      :+:    :+:   */
+/*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 16:45:38 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/09 12:09:54 by jdebladi         ###   ########.fr       */
+/*   Created: 2016/11/06 15:49:33 by jdebladi          #+#    #+#             */
+/*   Updated: 2016/11/06 15:56:33 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
-
-void		ft_puttab(char **tab)
+int		ft_isalpha(int c)
 {
-	size_t	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		ft_putstr(tab[i++]);
-		ft_putchar('\n');
-	}
+	if ((c >= 65 && c <= 90) || (c >= 97 && c <= 122))
+		return (1);
+	else
+		return (0);
 }

@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 16:45:38 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/09 12:09:54 by jdebladi         ###   ########.fr       */
+/*   Created: 2016/11/06 18:38:45 by jdebladi          #+#    #+#             */
+/*   Updated: 2016/11/14 18:03:43 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void		ft_puttab(char **tab)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	size_t	i;
-
-	i = 0;
-	while (tab[i])
-	{
-		ft_putstr(tab[i++]);
-		ft_putchar('\n');
-	}
+	new->next = (*alst);
+	*alst = new;
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_resolve.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 19:52:32 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/09/21 23:37:02 by jdebladi         ###   ########.fr       */
+/*   Updated: 2016/12/08 17:16:12 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	ft_find(t_bsq *data)
 	int max;
 
 	i = 1;
+	max = data->max;
 	while (i < data->nb_line)
 	{
 		j = 0;

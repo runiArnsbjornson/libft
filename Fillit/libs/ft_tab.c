@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab.c                                        :+:      :+:    :+:   */
+/*   ft_tab.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 16:45:38 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/09 12:09:54 by jdebladi         ###   ########.fr       */
+/*   Created: 2016/11/16 16:39:28 by jdebladi          #+#    #+#             */
+/*   Updated: 2016/11/16 17:44:29 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void		ft_puttab(char **tab)
+char	**ft_tab(size_t col, size_t line)
 {
 	size_t	i;
+	char	**tab;
 
 	i = 0;
-	while (tab[i])
+	if (!(tab = malloc(sizeof(char *) * line + 1)) || !col || !line)
+		return (NULL);
+	while (i < line)
 	{
-		ft_putstr(tab[i++]);
-		ft_putchar('\n');
+		tab[i] = malloc(sizeof(char) * col + 1);
+		i++;
 	}
+	tab[i] = NULL;
+	return (tab);
 }

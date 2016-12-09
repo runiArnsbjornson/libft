@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab.c                                        :+:      :+:    :+:   */
+/*   ft_bool_strchr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 16:45:38 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/09 12:09:54 by jdebladi         ###   ########.fr       */
+/*   Created: 2016/12/08 13:35:54 by jdebladi          #+#    #+#             */
+/*   Updated: 2016/12/08 14:05:48 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void		ft_puttab(char **tab)
+int	ft_bool_strchr(const char *s, int c)
 {
 	size_t	i;
+	char	*tmp;
 
 	i = 0;
-	while (tab[i])
+	tmp = (char *)s;
+	while (tmp[i])
 	{
-		ft_putstr(tab[i++]);
-		ft_putchar('\n');
+		if (tmp[i] == (char)c)
+			return (1);
+		i++;
 	}
+	return (0);
 }

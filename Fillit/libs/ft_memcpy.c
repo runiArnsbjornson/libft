@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 16:45:38 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/09 12:09:54 by jdebladi         ###   ########.fr       */
+/*   Created: 2016/11/04 19:12:50 by jdebladi          #+#    #+#             */
+/*   Updated: 2016/11/09 11:18:52 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void		ft_puttab(char **tab)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
-	while (tab[i])
+	while (i < n)
 	{
-		ft_putstr(tab[i++]);
-		ft_putchar('\n');
+		((char *)dst)[i] = ((char *)src)[i];
+		i++;
 	}
+	return (dst);
 }

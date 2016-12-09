@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 19:51:14 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/09/21 23:35:35 by jdebladi         ###   ########.fr       */
+/*   Updated: 2016/12/08 17:41:55 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ t_bsq	*ft_parse(char *str, t_bsq *data)
 	i = 0;
 	j = 0;
 	k = 0;
-	if ((data->tab = ft_split_whitespaces(str)) == NULL)
+	if ((data->tab = ft_split(str)) == NULL)
 		return (NULL);
+	printf("test4\n");
 	while (data->tab[0][j])
 		j++;
 	data->emp = data->tab[0][j - 3];
@@ -36,6 +37,7 @@ t_bsq	*ft_parse(char *str, t_bsq *data)
 		data->res[i] = (int *)malloc(sizeof(int) * ft_strlen(data->tab[1]));
 		i++;
 	}
+	printf("test5\n");
 	return (data);
 }
 
@@ -46,6 +48,7 @@ int		check_map(char *str, t_bsq *data)
 
 	if (!ft_parse(str, data))
 		return (0);
+	printf("test3\n");
 	i = 1;
 	j = 0;
 	if (data->nb_line != (ft_str_nb_line(str) - 1))

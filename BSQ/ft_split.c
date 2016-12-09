@@ -1,75 +1,88 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split_whitespaces.c                             :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: exam <exam@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/09/08 11:25:32 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/09/09 13:59:34 by jdebladi         ###   ########.fr       */
+/*   Created: 2016/11/29 12:25:44 by exam              #+#    #+#             */
+/*   Updated: 2016/12/08 17:46:11 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "bsq.h"
 
-int		ft_strlen1(char *str)
+int is_space(char c)
 {
-	int n;
-
-	n = 0;
-	while (*str != ' ' && *str <= '\t' && *str >= '\r' && *str != '\0')
-	{
-		n++;
-		str++;
-	}
-	return (n);
+	if (c == ' ' || (c >= 9 && c <= 13))
+		return (1);
+	return (0);
 }
 
-int		ft_n_words(char *str)
+int n_word(char *s)
 {
-	int n;
+	int i;
+	int count;
 
-	n = 0;
-	if (*str == '\0')
-		return (0);
-	while (*str == ' ' && *str >= '\t' && *str <= '\r' && *str != '\0')
-		str++;
-	while (*str != '\0')
+	i = 0;
+	count = 0;
+	while (s[i])
 	{
-		while (*str != ' ' && *str <= '\t' && *str >= '\r' && *str != '\0')
-			str++;
-		while (*str == ' ' && *str >= '\t' && *str <= '\r' && *str != '\0')
-			str++;
-		n++;
+		while (s[i] && is_space(s[i]) == 0)
+			i++;
+		while (s[i] && is_space(s[i]) == 1)
+			i++;
+		count++;
 	}
-	return (n);
+	if (is_space(s[0]) == 1)
+		count--;
+	return (count);
 }
 
-char	**ft_split_whitespaces(char *str)
+int ft_slen(char *s)
 {
-	int		l;
-	int		j;
-	int		n;
-	char	**tab;
-	char	**paragraphe;
+	int i;
 
-	n = ft_n_words(str);
-	paragraphe = malloc(sizeof(char*) * n + 1);
-	tab = paragraphe;
-	while (str)
+	i = 0;
+	while (s[i] && is_space(s[i]) == 0)
+		i++;
+	return (i);
+}
+
+char	**ft_split(char *str)
+{
+	int i;
+	int j;
+	int k;
+	int letter;
+	int word;
+	char **ret;
+
+	i = 0;
+	j = 0;
+	word = n_word(str);
+	ret = malloc(sizeof(char *) * word + 1);
+	while (str[i] && word > 0)
 	{
-		while (*str != '\0' && *str != ' ' && *str <= '\t' && *str >= '\r')
-			str++;
-		l = ft_strlen1(str);
-		paragraphe = malloc(sizeof(char) * (l + 1));
-		j = 0;
-		if (*str != '\0')
+		if (is_space(str[i]) == 1)
+			i++;
+		else
 		{
-			while (j < l)
-				(*paragraphe)[j++] = *str++;
-			(*paragraphe++)[l] = '\0';
+			letter = ft_slen(&str[i]);
+			k = 0;
+			ret[j] = malloc(sizeof(char) * letter + 1);
+			while (str [i] && letter != 0)
+			{
+					ret[j][k] = str[i];
+					k++;
+					i++;
+					letter--;
+			}
+			word--;
+			ret[j][k] = '\0';
+			j++;
 		}
 	}
-	*paragraphe = 0;
-	return (tab);
+	ret[j] = NULL;
+	return (ret);
 }

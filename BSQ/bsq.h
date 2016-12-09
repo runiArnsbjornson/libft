@@ -3,23 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   bsq.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/09/21 19:51:23 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/09/21 23:38:31 by jdebladi         ###   ########.fr       */
+/*   Updated: 2016/12/08 17:45:55 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BSQ_H
 # define BSQ_H
 
-# define BUFF_SIZE 524288
+# define BUFF_SIZE 10
 
 # include <unistd.h>
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <stdlib.h>
+# include <stdio.h>
 
 typedef struct	s_bsq
 {
@@ -34,7 +35,7 @@ typedef struct	s_bsq
 	int		**res;
 }				t_bsq;
 
-char			**ft_split_whitespaces(char *str);
+char			**ft_split(char *str);
 char			*ft_strcut(const char *str, int begin, int len);
 char			*ft_strdup(char *src);
 int				ft_strlen(char *str);

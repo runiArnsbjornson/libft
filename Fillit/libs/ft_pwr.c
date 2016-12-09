@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab.c                                        :+:      :+:    :+:   */
+/*   ft_pwr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 16:45:38 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/09 12:09:54 by jdebladi         ###   ########.fr       */
+/*   Created: 2016/11/16 15:23:50 by jdebladi          #+#    #+#             */
+/*   Updated: 2016/11/16 15:49:05 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void		ft_puttab(char **tab)
+int		ft_pwr(int nb, int power)
 {
-	size_t	i;
+	int	n;
 
-	i = 0;
-	while (tab[i])
+	n = nb;
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	if (power > 0)
 	{
-		ft_putstr(tab[i++]);
-		ft_putchar('\n');
+		n = ft_pwr(nb, power - 1);
+		nb = nb * n;
 	}
+	return (nb);
 }

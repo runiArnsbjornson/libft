@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab.c                                        :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 16:45:38 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/09 12:09:54 by jdebladi         ###   ########.fr       */
+/*   Created: 2016/11/06 13:52:29 by jdebladi          #+#    #+#             */
+/*   Updated: 2016/11/06 13:58:26 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void		ft_puttab(char **tab)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	size_t	i;
+	size_t s1_len;
+	size_t i;
 
 	i = 0;
-	while (tab[i])
+	s1_len = ft_strlen(s1);
+	while (s2[i])
 	{
-		ft_putstr(tab[i++]);
-		ft_putchar('\n');
+		s1[s1_len + i] = s2[i];
+		i++;
 	}
+	s1[s1_len + i] = '\0';
+	return (s1);
 }

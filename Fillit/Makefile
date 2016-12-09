@@ -6,41 +6,56 @@
 #    By: cfrouin <cfrouin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/03 14:41:23 by cfrouin           #+#    #+#              #
-#    Updated: 2016/11/30 17:19:28 by jdebladi         ###   ########.fr        #
+#    Updated: 2016/12/09 12:46:21 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC			=		srcs/main.c \
-					srcs/tet_list.c \
-					srcs/file.c \
-					srcs/check_tetriminos.c \
-					srcs/resolve.c \
-					srcs/resolve_map.c \
-					srcs/ft_puttab.c
+SRC = srcs/main.c \
+	srcs/tet_list.c \
+	srcs/file.c \
+	srcs/check_tetriminos.c \
+	srcs/resolve.c \
+	srcs/resolve_map.c \
+	srcs/ft_puttab.c
 
-NAME		=		fillit
+NAME = fillit
 
-OBJ			=		$(SRC:.c=.o)
+OBJ = $(SRC:.c=.o)
 
-CFLAGS		=		-Wextra -Wall -Werror -Iincludes
+CFLAGS = -Wextra -Wall -Werror -Iincludes
 
-all:				$(NAME)
+all: $(NAME)
 
 %.o: %.c
 	@gcc -g -o $@ -c $< $(CFLAGS)
+	@echo "\033[K\033[34mLibft :\033[0m [ Compiling :\033[33m $^\033[0m]\033[1A"
 
-$(NAME):			$(OBJ)
-					@gcc -Llibs -lft -o $(NAME) $(OBJ)
-					@echo "\033[32mCan you feel it\033[0m"
+$(NAME): $(OBJ)
+	@cd libs && $(MAKE)
+	@gcc -Llibs -lft -o $(NAME) $(OBJ)
+	@echo "\033[K   \033[32;42m##\033[0m \033[31;41m##\033[0m"
+	@echo "\033[36;46m#\033[0m \033[32;42m##\033[0m   \033[31;41m##\033[0m "
+	@echo "\033[36;46m#\033[0m \033[35mCan\033[0m"
+	@echo "\033[36;46m#\033[0;0m \033[91myou\033[0m  \033[33;43m##\033[0m"
+	@echo "\033[36;46m#\033[0m \033[31mfeel\033[0m \033[33;43m##\033[0m"
+	@echo "  \033[34mit\033[0m "
+	@echo "\033[91;101m#\033[0m       \033[34;44m#\033[0m"
+	@echo "\033[91;101m#\033[0m   \033[35;45m#\033[0m   \033[34;44m#\033[0m"
+	@echo "\033[91;101m##\033[0m \033[35;45m###\033[0m \033[34;44m##\033[0m"
 
 clean:
-					@rm -f $(OBJ)
+	@cd libs && $(MAKE) clean
+	@rm -f $(OBJ)
 
-nclean:				all clean
+nclean: all clean
 
-fclean:				clean
-					@rm -f $(NAME)
+fclean: clean
+	@cd libs && $(MAKE) fclean
+	@rm -f $(NAME)
+	@echo "\033[K\033[31m============================\033[0m"
+	@echo "\033[31mRemoval\033[00m" [ "Fillit" ] " \033[32mComplete\033[00m"
+	@echo "\033[K\033[31m============================\033[0m"
 
-re:					fclean all
+re: fclean all
 
-.PHONY:				all clean fclean nclean re
+.PHONY: all clean fclean nclean re

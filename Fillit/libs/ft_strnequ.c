@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab.c                                        :+:      :+:    :+:   */
+/*   ft_strnequ.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 16:45:38 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/09 12:09:54 by jdebladi         ###   ########.fr       */
+/*   Created: 2016/11/06 18:24:30 by jdebladi          #+#    #+#             */
+/*   Updated: 2016/11/12 15:35:31 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void		ft_puttab(char **tab)
+int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	size_t	i;
+	size_t i;
 
 	i = 0;
-	while (tab[i])
+	if (s1 && s2)
 	{
-		ft_putstr(tab[i++]);
-		ft_putchar('\n');
+		while (s1[i] || s2[i])
+		{
+			if (s1[i] != s2[i] && i < n)
+				return (0);
+			i++;
+		}
+		return (1);
 	}
+	return (0);
 }

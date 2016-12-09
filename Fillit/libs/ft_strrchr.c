@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 16:45:38 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/09 12:09:54 by jdebladi         ###   ########.fr       */
+/*   Created: 2016/11/06 14:18:24 by jdebladi          #+#    #+#             */
+/*   Updated: 2016/11/14 18:21:05 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void		ft_puttab(char **tab)
+char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
+	char	*tmp;
 
-	i = 0;
-	while (tab[i])
+	i = ft_strlen((char *)s) + 1;
+	tmp = (char *)s;
+	while (i-- != 0)
 	{
-		ft_putstr(tab[i++]);
-		ft_putchar('\n');
+		if ((unsigned char)c == tmp[i])
+			return (&tmp[i]);
 	}
+	return (NULL);
 }

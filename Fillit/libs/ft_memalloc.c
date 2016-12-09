@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_puttab.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/16 16:45:38 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/09 12:09:54 by jdebladi         ###   ########.fr       */
+/*   Created: 2016/11/06 18:13:00 by jdebladi          #+#    #+#             */
+/*   Updated: 2016/11/09 12:50:24 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fillit.h"
+#include "libft.h"
 
-void		ft_puttab(char **tab)
+void	*ft_memalloc(size_t size)
 {
 	size_t	i;
+	void	*ret;
 
+	if (size == 0)
+		return (NULL);
+	if ((ret = malloc(size)) == NULL)
+		return (NULL);
 	i = 0;
-	while (tab[i])
+	while (i < size)
 	{
-		ft_putstr(tab[i++]);
-		ft_putchar('\n');
+		((char *)ret)[i] = 0;
+		i++;
 	}
+	return (ret);
 }
