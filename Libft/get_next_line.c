@@ -6,11 +6,11 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 19:08:27 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/09 13:40:42 by jdebladi         ###   ########.fr       */
+/*   Updated: 2016/12/15 12:51:34 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 int		ft_lenght(char *line, int start)
 {

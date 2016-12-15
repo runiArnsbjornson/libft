@@ -6,7 +6,7 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 18:34:05 by jdebladi          #+#    #+#              #
-#    Updated: 2016/12/15 12:48:34 by jdebladi         ###   ########.fr        #
+#    Updated: 2016/12/15 12:54:40 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -101,24 +101,18 @@ all: $(NAME)
 
 clean:
 	@/bin/rm -f $(OBJ)
-	@echo "\033[K\033[31m============================\033[0m"
-	@echo "\033[31mRemoval\033[00m  " [ "*.o" ] "  \033[32mComplete\033[00m"
-	@echo "\033[K\033[31m============================\033[0m"
+	@echo "\033[31mRemoval\033[0m  " [ "*.o" ] "  \033[32mComplete\033[0m"
 
 re: fclean all
-	@echo "\033[32m   *** Let's start anew ***\033[00m"
+	@echo "\033[32m*** Let's start anew ***\033[00m"
 
 fclean: clean
 	@/bin/rm -f $(NAME)
-	@echo "\033[K\033[31m============================\033[0m"
-	@echo "\033[31mRemoval\033[00m" [ $(NAME) ] "\033[32mComplete\033[00m"
-	@echo "\033[K\033[31m============================\033[0m"
+	@echo "\033[31mRemoval\033[0m" [ $(NAME) ] "\033[32mComplete\033[0m"
 
 $(NAME): $(OBJ)
 	@$(AR) $(NAME) $(OBJ)
 	@ranlib $(NAME)
-	@echo "\033[K\033[32m================================\033[0m"
-	@echo "\033[34mCompiling\033[0m" [ $(NAME) ] "\033[K\033[32mSuccessful\033[00m"
-	@echo "\033[32m================================\033[00m"
+	@echo "\033[34mCompiling\033[0m" [ $(NAME) ] "\033[K\033[32mSuccessful\033[0m"
 
 .PHONY : all clean fclean re
