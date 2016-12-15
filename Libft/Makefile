@@ -6,7 +6,7 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 18:34:05 by jdebladi          #+#    #+#              #
-#    Updated: 2016/12/08 13:48:14 by jdebladi         ###   ########.fr        #
+#    Updated: 2016/12/15 12:48:34 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,8 @@ SRC = ft_abs.c \
 	ft_strtrim.c \
 	ft_tab.c \
 	ft_tolower.c \
-	ft_toupper.c
+	ft_toupper.c \
+	get_next_line.c
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
