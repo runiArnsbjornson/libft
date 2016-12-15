@@ -6,16 +6,18 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:32:18 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/08 14:07:01 by jdebladi         ###   ########.fr       */
+/*   Updated: 2016/12/15 12:47:42 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <unistd.h>
+
+# define BUFF_SIZE 32
 
 typedef struct	s_list
 {
@@ -99,5 +101,11 @@ char			*ft_strtrim(char const *s);
 char			**ft_tab(size_t col, size_t line);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
+
+/*
+**	not ft_functions
+*/
+
+int				get_next_line(const int fd, char **line);
 
 #endif
