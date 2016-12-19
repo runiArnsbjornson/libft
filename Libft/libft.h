@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:32:18 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/15 12:47:42 by jdebladi         ###   ########.fr       */
+/*   Updated: 2016/12/19 12:06:04 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ void			ft_puttab(char **tab);
 void			ft_puttab_fd(char **tab, int fd);
 int				ft_pwr(int nb, int power);
 char			*ft_replace(const char *s, const char *old, const char *new);
+char			**ft_split(char *str);
 int				ft_sqrt(int n);
 char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strchr(const char *s, int c);
