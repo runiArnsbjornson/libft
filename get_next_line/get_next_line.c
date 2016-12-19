@@ -6,13 +6,13 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 19:08:27 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/09 13:40:42 by jdebladi         ###   ########.fr       */
+/*   Updated: 2016/12/19 13:12:50 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-int		ft_lenght(char *line, int start)
+static int		ft_lenght(char *line, int start)
 {
 	int i;
 
@@ -25,7 +25,7 @@ int		ft_lenght(char *line, int start)
 	return (i);
 }
 
-int		ft_save(char **line, char **rest, char *buf)
+static int		ft_save(char **line, char **rest, char *buf)
 {
 	char *tmp;
 	char *tmp2;
@@ -53,7 +53,7 @@ int		ft_save(char **line, char **rest, char *buf)
 	}
 }
 
-int		ft_line(char **line, char **rest, char *buf, int fd)
+static int		ft_line(char **line, char **rest, char *buf, int fd)
 {
 	int ret;
 

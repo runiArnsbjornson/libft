@@ -6,13 +6,13 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 12:29:59 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/19 12:30:55 by jdebladi         ###   ########.fr       */
+/*   Updated: 2016/12/19 12:37:37 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		lenght(char *str)
+static int	lenght(char *str)
 {
 	size_t i;
 
@@ -22,7 +22,7 @@ int		lenght(char *str)
 	return (i);
 }
 
-int		nb_word(char *str)
+static int	nb_word(char *str)
 {
 	size_t i;
 	size_t count;
@@ -41,7 +41,7 @@ int		nb_word(char *str)
 	return (count);
 }
 
-char	**ft_split(char *str)
+char		**ft_split(char *str)
 {
 	char	**ret;
 	int		i;
