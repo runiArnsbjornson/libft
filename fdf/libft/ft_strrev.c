@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert.c                                          :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/30 17:22:59 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/01/30 17:23:54 by jdebladi         ###   ########.fr       */
+/*   Created: 2016/11/16 15:25:32 by jdebladi          #+#    #+#             */
+/*   Updated: 2016/11/16 18:01:14 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <wchar.h>
-#include <locale.h>
+#include "libft.h"
 
-int	main(void)
+char	*ft_strrev(char *s)
 {
-	wchar_t test;
+	char *start;
+	char *t;
+	char temp;
 
-	setlocale(LC_ALL, "");
-	wprintf(L"Caract%lcre : ", 232);
-	fgetws(&test, 2, stdin);
-	wprintf(L"Caract%lcre %lc = %d\n", 232, test, test);
-	return (0);
+	start = s;
+	t = ft_strchr(s, '\0');
+	--t;
+	while (s < t)
+	{
+		temp = *s;
+		*s = *t;
+		*t = temp;
+		++s;
+		--t;
+	}
+	return (start);
 }

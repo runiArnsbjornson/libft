@@ -6,11 +6,11 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/09 13:29:45 by jdebladi          #+#    #+#              #
-#    Updated: 2017/02/02 13:07:25 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/01/09 14:32:15 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = ft_printf.c
+SRCS = srcs/main.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -18,7 +18,7 @@ INCL = includes/
 
 CFLAGS = -Werror -Wextra -Wall -I$(INCL)
 
-NAME = ft_printf
+NAME = fdf
 
 all: $(NAME)
 
@@ -27,20 +27,17 @@ all: $(NAME)
 	@gcc -g -o $@ -c $< $(CFLAGS)
 
 $(NAME): $(OBJS)
-	@cd Libft && make
+	@cd libft && make
 	@gcc -g -o $(NAME) $(OBJS) $(CFLAGS) -Llibft -lft
 	@echo "\033[34mCompiling\033[0m" [ $(NAME) ] "\033[K\033[32mSuccessful\033[0m"
 
 clean:
-	@cd Libft && make clean
+	@cd libft && make clean
 	@/bin/rm -f $(OBJS)
 	@echo "\033[31mRemoval\033[0m  " [ "fdf/*.o" ] "  \033[32mComplete\033[0m"
 
-mclean: all clean
-	@echo "\033[32mMake && cleaned\033[00m"
-
 fclean: clean
-	@cd Libft && make fclean
+	@cd libft && make fclean
 	@/bin/rm -f $(NAME)
 	@echo "\033[31mRemoval\033[0m" [ $(NAME) ] "\033[32mComplete\033[0m"
 
