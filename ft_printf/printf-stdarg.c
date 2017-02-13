@@ -183,26 +183,43 @@ int main(void)
 
 	mi = (1 << (bs-1)) + 1;
 	ft_printf("%s\n", ptr);
+	printf("%s\n", ptr);
 	ft_printf("printf test\n");
+	printf("printf test\n");
 	ft_printf("%s is null pointer\n", np);
+	printf("%s is null pointer\n", np);
 	ft_printf("%d = 5\n", i);
+	printf("%d = 5\n", i);
 	ft_printf("%d = - max int\n", mi);
+	printf("%d = - max int\n", mi);
 	ft_printf("char %c = 'a'\n", 'a');
+	printf("char %c = 'a'\n", 'a');
 	ft_printf("hex %x = ff\n", 0xff);
+	printf("hex %x = ff\n", 0xff);
 	ft_printf("hex %02x = 00\n", 0);
+	printf("hex %02x = 00\n", 0);
 	ft_printf("signed %d = unsigned %u = hex %x\n", -3, -3, -3);
-	ft_printf("%d %s(s)%", 0, "message");
+	printf("signed %d = unsigned %u = hex %x\n", -3, -3, -3);
 	ft_printf("\n");
+	printf("\n");
 	ft_printf("%d %s(s) with %%\n", 0, "message");
+	printf("%d %s(s) with %%\n", 0, "message");
 	s_printf(buf, "justif: \"%-10s\"\n", "left"); ft_printf("%s", buf);
+	s_printf(buf, "justif: \"%-10s\"\n", "left"); printf("%s", buf);
 	s_printf(buf, "justif: \"%10s\"\n", "right"); ft_printf("%s", buf);
+	s_printf(buf, "justif: \"%10s\"\n", "right"); printf("%s", buf);
 	s_printf(buf, " 3: %04d zero padded\n", 3); ft_printf("%s", buf);
+	s_printf(buf, " 3: %04d zero padded\n", 3); printf("%s", buf);
 	s_printf(buf, " 3: %-4d left justif.\n", 3); ft_printf("%s", buf);
+	s_printf(buf, " 3: %-4d left justif.\n", 3); printf("%s", buf);
 	s_printf(buf, " 3: %4d right justif.\n", 3); ft_printf("%s", buf);
+	s_printf(buf, " 3: %4d right justif.\n", 3); printf("%s", buf);
 	s_printf(buf, "-3: %04d zero padded\n", -3); ft_printf("%s", buf);
+	s_printf(buf, "-3: %04d zero padded\n", -3); printf("%s", buf);
 	s_printf(buf, "-3: %-4d left justif.\n", -3); ft_printf("%s", buf);
+	s_printf(buf, "-3: %-4d left justif.\n", -3); printf("%s", buf);
 	s_printf(buf, "-3: %4d right justif.\n", -3); ft_printf("%s", buf);
-
+	s_printf(buf, "-3: %4d right justif.\n", -3); printf("%s", buf);
 	return 0;
 }
 

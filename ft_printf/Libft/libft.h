@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:32:18 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/12/19 12:06:04 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/02/13 14:40:32 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,9 @@ void			ft_memdel(void **ap);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_occurence(int n, char **argv);
-void			ft_putchar(char c);
-void			ft_putchar_fd(char c, int fd);
+int				ft_printf(const char *format, ...);
+void			ft_putchar(int c);
+void			ft_putchar_fd(int c, int fd);
 void			ft_putendl(char const *s);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr(int n);

@@ -13,12 +13,14 @@ int main() {
 	printf("The maximum value of SHORT INT = %d\n\n", SHRT_MAX);
 	printf("The minimum value of INT = %d\n", INT_MIN);
 	printf("The maximum value of INT = %d\n\n", INT_MAX);
-	printf("The maximum value of UNSIGNED INT = %d\n\n", UINT_MAX);
+	printf("The maximum value of UNSIGNED INT = %u\n\n", UINT_MAX);
 	printf("The minimum value of LONG = %ld\n", LONG_MIN);
 	printf("The maximum value of LONG = %ld\n\n", LONG_MAX);
 	printf("The maximum value of UNSIGNED LONG = %lu\n\n", ULONG_MAX);
 	printf("The minimum value of LONG LONG = %lld\n", LLONG_MIN);
 	printf("The maximum value of LONG LONG = %lld\n\n", LLONG_MAX);
 	printf("The maximum value of UNSIGNED LONG LONG = %llu\n\n", ULLONG_MAX);
+	printf("The maximum value of SSIZE_T = %ld\n", SSIZE_MAX);
+	printf("The maximum value of NL_ARGMAX = %u\n", NL_ARGMAX);
 	return(0);
 }
