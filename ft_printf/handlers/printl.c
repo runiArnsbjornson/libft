@@ -6,14 +6,14 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 12:18:47 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/02/13 18:54:51 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/02/22 15:18:11 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 #include "../includes/ft_printf.h"
 
-int	printl(char **out, long i, int b, t_con *version)
+int	printl(char **out, long i, int b, t_flag *version)
 {
 	char			buf[BSIZE];
 	char			*s;

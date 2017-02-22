@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <string.h>
+#include <locale.h>
 
 int		numberbits(unsigned int valeur)
 {
@@ -41,22 +42,19 @@ void		push_uchar(char* buffer, size_t *pIndex, unsigned char ch)
 	push_char(buffer, pIndex, (char)ch);
 }
 
-char		*conversion_utf8(char* buffer, size_t cchTailleBuffer, int codePoint)
+char		*conversion_utf8(char* buffer, size_t index, int codePoint)
 {
 	/*Indications sur le premier octet de la séquence*/
+	setlocale(LC_ALL, "");
 	const int BitsUtilesDansPremierOctet[] = { 7, 5, 4, 3 };
-	const unsigned char MasquePremierOctet[] = { 0x7F, 0x1F, 0x0F, 0x07 }; /*CORRECTION: Changer dernière valeur de 3 à 7*/
+	const unsigned char MasquePremierOctet[] = { 0x7F, 0x1F, 0x0F, 0x07 };
 	const unsigned char PrefixePremierOctet[] = { 0x00, 0xC0, 0xE0, 0xF0 };
-	const int MaxHexetsPlus1 = sizeof MasquePremierOctet / sizeof MasquePremierOctet[0];
-	const size_t TailleMaxRequise = MaxHexetsPlus1 + 1; /*Un premier octet, 0-3 hexets, et un caractère nul terminal*/
-
-	size_t index = cchTailleBuffer;
 	unsigned int bitsCodePoint = codePoint;
 	int nbTotalBits = numberbits(bitsCodePoint);
 	int nbBitsRestants = nbTotalBits;
 	int nbHexetsEcrits = 0;
 
-	if (buffer == NULL || cchTailleBuffer < TailleMaxRequise)
+	if (buffer == NULL || index < 5)
 		return NULL; /*Buffer trop petit pour taille maximale d'un codePoint UTF-8*/
 	if (codePoint < 0 || nbTotalBits > 21)
 		return NULL; /*codePoint hors plage*/
@@ -70,13 +68,12 @@ char		*conversion_utf8(char* buffer, size_t cchTailleBuffer, int codePoint)
 		const unsigned int MasqueHexet = 0x0000003F;
 		const unsigned char PrefixeHexet = 0x80;
 		unsigned int bitsHexet = bitsCodePoint & MasqueHexet;
-		unsigned char hexet = (unsigned char)(bitsHexet) | PrefixeHexet;
+		unsigned char hexet = (unsigned char)(bitsCodePoint & MasqueHexet) | PrefixeHexet;
 		push_uchar(buffer, &index, hexet);
-
 		++nbHexetsEcrits;
 		bitsCodePoint >>= 6;
 		nbBitsRestants -= 6;
-		assert(nbHexetsEcrits < MaxHexetsPlus1);
+		assert(nbHexetsEcrits < 4);
 	}
 
 	/*Et maintenant le premier octet*/
@@ -119,11 +116,6 @@ void TestUtf8(int codePoint)
 
 void TestConversion(void)
 {
-	int i;
-	for(i=0 ; i<10 ; i++)
-	{
-		printf("Nombre de bits de %2d: %d\n", i, numberbits(i));
-	}
 	TestUtf8('a');
 	TestUtf8(L'é');
 	TestUtf8(L'∑');

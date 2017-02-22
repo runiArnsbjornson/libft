@@ -6,18 +6,21 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/09 13:29:45 by jdebladi          #+#    #+#              #
-#    Updated: 2017/02/13 14:51:51 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/02/22 17:32:55 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS = main.c \
+	srcs/search.c \
+	srcs/get.c \
 	handlers/printi.c \
 	handlers/printl.c \
 	handlers/printll.c \
 	handlers/prints.c \
 	handlers/printls.c \
 	handlers/utf8_convert.c \
-	Libft/ft_putchar.c
+	Libft/ft_putchar.c \
+	Libft/ft_isdigit.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -32,7 +35,7 @@ all: $(NAME)
 %.o: %.c
 	@echo "\033[K\033[34mLibft :\033[0m [ Compiling :\033[33m $^\033[0m]\033[1A"
 	@gcc -g -o $@ -c $< $(CFLAGS)
-	
+
 $(NAME): $(OBJS)
 	@ar rc $(NAME) $(OBJS)
 	@echo "\033[34mCompiling\033[0m" [ $(NAME) ] "\033[K\033[32mSuccessful\033[0m"

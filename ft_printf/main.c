@@ -6,37 +6,17 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 11:33:05 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/02/13 18:59:50 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/02/22 17:40:05 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-#include "includes/Libft.h"
+#include "includes/libft.h"
 #include "includes/ft_printf.h"
 
-int				check_conv(const char c)
+void			zero_struct(t_flag *f)
 {
-	const char flag[23] = "#.-+ hl*$L'jz0123456789";
-	const char conv[22] = "%abcdefgikoprsuxAEFGIX";
-	const char lconv[5] = "CDOSU";
-	int i;
-
-	i = 0;
-	while (i < 23)
-		{
-			if (i < 23 && c == flag[i])
-				return (-1);
-			if (i < 22 && c == conv[i])
-				return (1);
-			if (i < 5 && c == lconv[i])
-				return (2);
-			i++;
-		}
-	return (0);
-}
-
-void			zero_struct(t_flag *f, t_con *version)
-{
+	f->len = 0;
 	f->lag_h = 0;
 	f->lag_hh = 0;
 	f->lag_l = 0;
@@ -49,18 +29,18 @@ void			zero_struct(t_flag *f, t_con *version)
 	f->lag_plus = 0;
 	f->lag_space = 0;
 	f->lag_dot = 0;
-	version->width = 0;
-	version->pad = 0;
-	version->preci = 0;
-	version->type = 0;
-	version->sign = 0;
-	version->start = 'a';
+	f->width = 0;
+	f->preci = 0;
+	f->type = 0;
+	f->sign = 0;
+	f->pad = ' ';
+	f->conv = 0;
+	f->start = 'a';
+	f->lags = NULL;
 }
 
-static int		parse(char **out, const char *format, va_list args)
+/*static int		parse(char **out, const char *format, va_list args)
 {
-	int		width;
-	int		pad;
 	int		pc;
 	char	*s;
 	wchar_t	*ls;
@@ -68,30 +48,29 @@ static int		parse(char **out, const char *format, va_list args)
 	char	wscr[8];
 	char	*uchar;
 	t_flag	f;
-	t_con	version;
+	t_con	f;
 
 	pc = 0;
 	while (*format != 0)
 	{
 		if (*format == '%')
 		{
-			zero_struct(&f, &version);
+			zero_struct(&f, &f);
 			++format;
-			width = 0;
-			pad = 0;
+
 			if (*format == '\0')
 				break ;
 			while (*format == '0')
 			{
 				++format;
 				f.lag_zero =1;
-				version.pad |= 2;
+				f.pad |= 2;
 			}
 			if (*format == '-')
 			{
 				++format;
 				f.lag_minus = 1;
-				version.pad = 1;
+				f.pad = 1;
 			}
 			if (*format == '+')
 			{
@@ -105,21 +84,21 @@ static int		parse(char **out, const char *format, va_list args)
 			}
 			while (*format >= '0' && *format <= '9')
 			{
-				version.width *= 10;
-				version.width += *format - '0';
+				f.width *= 10;
+				f.width += *format - '0';
 				++format;
 			}
 			if (*format == '.')
 			{
 				++format;
 				if (*format < '0' && *format > '9')
-					version.preci = 0;
+					f.preci = 0;
 				else
 				{
 					while (*format >= '0' && *format <= '9')
 						{
-							version.preci *= 10;
-							version.preci += *format - '0';
+							f.preci *= 10;
+							f.preci += *format - '0';
 							++format;
 						}
 				}
@@ -159,73 +138,60 @@ static int		parse(char **out, const char *format, va_list args)
 				++format;
 				f.lag_htag = 1;
 			}
-			//printf("check_conv(%c) = %d\n", *format, check_conv(*format));
-			version.type = (f.lag_hh + f.lag_h + f.lag_l + f.lag_ll);
-			//printf("version.type = %d\n", version.type);
-/*
-**	end of flags &&
-**	start of conversion
-*/
+			f.type = (f.lag_hh + f.lag_h + f.lag_l + f.lag_ll);
 			if (*format == '%')
-			{
-				scr[0] = '%';
-				scr[1] = '\0';
-				pc += prints(out, scr, &version);
-			}
+				pc += prints(out, "%\0", &f);
 			if (*format == 's')
 			{
 				s = (char *)va_arg(args, char *);
-				pc += prints(out, s ? s : "(null)", &version);
+				pc += prints(out, s ? s : "(null)", &f);
 			}
 			if (*format == 'S')
 			{
 				ls = (wchar_t *)va_arg(args, wchar_t *);
-				pc += printls(out, ls ? ls : L"(null)", &version);
+				pc += printls(out, ls ? ls : L"(null)", &f);
 			}
 			if (*format == 'd' || *format == 'i')
 			{
-				version.sign = 1;
-				pc += printi(out, va_arg(args, int), 10, &version);
+				f.sign = 1;
+				pc += printi(out, va_arg(args, int), 10, &f);
 			}
 			if (*format == 'D')
 			{
-				version.sign = 1;
-				pc += printl(out, va_arg(args, long), 10, &version);
+				f.sign = 1;
+				pc += printl(out, va_arg(args, long), 10, &f);
 			}
 			if (*format == 'u')
-				pc += printi(out, va_arg(args, int), 10, &version);
+				pc += printi(out, va_arg(args, int), 10, &f);
 			if (*format == 'U')
-				pc += printl(out, va_arg(args, long), 10, &version);
+				pc += printl(out, va_arg(args, long), 10, &f);
 			if (*format == 'x')
-				pc += printi(out, va_arg(args, int), 16, &version);
+				pc += printi(out, va_arg(args, int), 16, &f);
 			if (*format == 'X')
 			{
-				version.start = 'A';
-				pc += printi(out, va_arg(args, int), 16, &version);
+				f.start = 'A';
+				pc += printi(out, va_arg(args, int), 16, &f);
 			}
 			if (*format == 'p')
-				pc += printl(out, (long)va_arg(args, void *), 16, &version);
+				pc += printl(out, (long)va_arg(args, void *), 16, &f);
 			if (*format == 'o')
-				pc += printi(out, va_arg(args, int), 8, &version);
+				pc += printi(out, va_arg(args, int), 8, &f);
 			if (*format == 'O')
-				pc += printl(out, va_arg(args, long), 8, &version);
+				pc += printl(out, va_arg(args, long), 8, &f);
 			if (*format == 'b')
-				pc += printi(out, va_arg(args, int), 2, &version);
+				pc += printi(out, va_arg(args, int), 2, &f);
 			if (*format == 'c')
 			{
 				scr[0] = (char)va_arg(args, int);
 				scr[1] = '\0';
-				pc += prints(out, scr, &version);
+				pc += prints(out, scr, &f);
 			}
 			if (*format == 'C')
 			{
 				uchar = utf8_convert(wscr, 8, va_arg(args, wchar_t));
-				pc += prints(out, uchar, &version);
+				pc += prints(out, uchar, &f);
 			}
 		}
-/*
-**	other char
-*/
 		else
 		{
 			printchar(out, *format);
@@ -237,12 +203,41 @@ static int		parse(char **out, const char *format, va_list args)
 		**out = '\0';
 	va_end(args);
 	return (pc);
+}*/
+
+static int	ft_parse(char **out, const char *fmt, t_flag *f, va_list args)
+{
+	int pc;
+	int i;
+
+	pc = 0;
+	i = 0;
+	while (fmt[i] && fmt)
+	{
+		if (fmt[i] == '%')
+		{
+			search(&fmt[i], f, 1);
+			// precision(&fmt, f);
+			// ft_handlers(out, args, f);
+			// zero_struct(f);
+		}
+		else
+		{
+			printchar(out, fmt[i]);
+			++pc;
+		}
+		i++;
+	}
+	va_end(args);
+	return (pc);
 }
 
 int			ft_printf(const char *format, ...)
 {
-	va_list args;
+	va_list	args;
+	t_flag	f;
 
+	zero_struct(&f);
 	va_start(args, format);
-	return (parse(0, format, args));
+	return (ft_parse(0, format, &f, args));
 }

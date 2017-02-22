@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 12:22:15 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/02/13 18:49:40 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/02/22 15:18:02 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	printchar(char **s, int c)
 		(void)ft_putchar(c);
 }
 
-int	prints(char **out, const char *s, t_con *version)
+int	prints(char **out, const char *s, t_flag *version)
 {
 	int			pc;
 	int			len;

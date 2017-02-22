@@ -6,14 +6,14 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 12:59:40 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/02/13 18:58:15 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/02/22 15:17:58 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 #include "../includes/ft_printf.h"
 
-int printls(char **out, const wchar_t *s, t_con *version)
+int printls(char **out, const wchar_t *s, t_flag *version)
 {
 	int				pc;
 	int				len;

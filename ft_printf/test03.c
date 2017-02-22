@@ -20,6 +20,7 @@ int main() {
 	printf("The minimum value of LONG LONG = %lld\n", LLONG_MIN);
 	printf("The maximum value of LONG LONG = %lld\n\n", LLONG_MAX);
 	printf("The maximum value of UNSIGNED LONG LONG = %llu\n\n", ULLONG_MAX);
+	printf("The maximum value of SSIZE_T = %d\n", SIZE_MAX);
 	printf("The maximum value of SSIZE_T = %ld\n", SSIZE_MAX);
 	printf("The maximum value of NL_ARGMAX = %u\n", NL_ARGMAX);
 	return(0);
