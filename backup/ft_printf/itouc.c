@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   itouc.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 17:53:39 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/02/15 15:31:17 by jdebladi         ###   ########.fr       */
+/*   Created: 2017/02/06 12:32:39 by jdebladi          #+#    #+#             */
+/*   Updated: 2017/02/06 12:32:41 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <locale.h>
+#include <stdlib.h>
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+int	main(int ac, char const **av)
 {
-	size_t s1_len;
-	size_t i;
+	int i;
 
-	i = 0;
-	s1_len = ft_strlen(s1);
-	while (s2[i] && i < n)
+	i = 1;
+	setlocale(LC_ALL, "");
+	while (i < ac)
 	{
-		s1[s1_len + i] = s2[i];
+		printf("%lc\n", atoi(av[i]));
 		i++;
 	}
-	s1[s1_len + i] = '\0';
-	return (s1);
+	return 0;
 }

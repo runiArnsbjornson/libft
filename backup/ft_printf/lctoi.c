@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   lctoi.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/06 17:53:39 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/02/15 15:31:17 by jdebladi         ###   ########.fr       */
+/*   Created: 2017/01/30 17:22:59 by jdebladi          #+#    #+#             */
+/*   Updated: 2017/02/06 12:41:13 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <wchar.h>
+#include <locale.h>
 
-char	*ft_strncat(char *s1, const char *s2, size_t n)
+int	main(void)
 {
-	size_t s1_len;
-	size_t i;
+	wchar_t test;
 
-	i = 0;
-	s1_len = ft_strlen(s1);
-	while (s2[i] && i < n)
-	{
-		s1[s1_len + i] = s2[i];
-		i++;
-	}
-	s1[s1_len + i] = '\0';
-	return (s1);
+	setlocale(LC_ALL, "");
+	wprintf(L"Caract%lcre : ", 232);
+	fgetws(&test, 2, stdin);
+	wprintf(L"Caract%lcre %lc = %d\n", 232, test, test);
+	return 0;
 }

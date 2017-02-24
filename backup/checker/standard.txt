@@ -1,0 +1,497 @@
+ok alors 9876
+ok alors 9876
+ok alors +9876
+ok alors  9876
+ok alors 9876
+ok alors +9876
+ok alors +9876
+ok alors  9876
+ok alors +9876
+ok alors  9876
+ok alors  9876
+ok alors +9876
+ok alors 9876
+ok alors +9876
+ok alors +9876
+ok alors +9876
+ok alors  9876
+ok alors +9876
+ok alors +9876  
+ok alors +0000000000000000009876
+ok alors +9876
+ok alors +9876
+ok alors 9876      
+ok alors     +09876
+ok alors 09876     
+ok alors      09876
+ok alors     +09876
+ok alors      +9876
+ok alors     +09876
+ok alors +009876
+ok alors  0009876       
+ok alors +09876    
+ok alors +000000009876
+ok alors +000000009876
+ok alors +000000009876
+ok alors +000000009876    
+ok alors -000009876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876
+ok alors -9876  
+ok alors -0000000000000000009876
+ok alors -9876
+ok alors -9876
+ok alors -9876     
+ok alors     -09876
+ok alors -09876    
+ok alors     -09876
+ok alors     -09876
+ok alors      -9876
+ok alors     -09876
+ok alors -009876
+ok alors -0009876       
+ok alors -09876    
+ok alors -000000009876
+ok alors -000000009876
+ok alors -000000009876
+ok alors -000000009876    
+ok alors -000000009876 la le printf marche       9877
+st = @moulitest:  
+st = @moulitest:  
+st = @moulitest:            
+test = -12345
+test = -12345
+test = -57
+test = 4294954951
+test = 4294954951
+test = 17
+test = F9808FE1
+test = 17
+test = f9808fe1
+test = 4294954951
+test = 37777747707
+test = 25464057425
+test = 30010733323
+test = 0x3039
+test = 0x75bcd15
+test = l
+test = *
+test = 0
+test = 9223372036854775807
+test = 0
+test ft_printf numero 1, only int   87659876, donc         +0042 1000 pour 100  de reussite
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224
+ok alors 23224  
+ok alors 00000000000000000023224
+ok alors 23224
+ok alors 23224
+ok alors 23224     
+ok alors      23224
+ok alors 23224     
+ok alors      23224
+ok alors      23224
+ok alors      23224
+ok alors      23224
+ok alors 023224
+ok alors 0023224        
+ok alors 23224     
+ok alors 000000023224
+ok alors 000000023224
+ok alors 000000023224
+ok alors 000000023224     
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 00000000000037777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554
+ok alors 37777754554    
+ok alors 37777754554
+ok alors 037777754554
+ok alors 037777754554
+ok alors 037777754554
+ok alors 037777754554     
+ok alors 037777754554 la le printf marche      23225
+ok alors 2694 
+ok alors 2694 
+ok alors 2694 
+ok alors 2694 
+ok alors 2694 
+ok alors 2694 
+ok alors 2694 
+ok alors 2694 
+ok alors 2694 
+ok alors 2694 
+ok alors 2694 
+ok alors 2694 
+ok alors 2694 
+ok alors 2694 
+ok alors 2694 
+ok alors 2694 
+ok alors 2694  
+ok alors 2694 
+ok alors 2694    
+ok alors 00000000000000000002694 
+ok alors 2694 
+ok alors 2694 
+ok alors 2694       
+ok alors      02694 
+ok alors 02694      
+ok alors      02694 
+ok alors      02694 
+ok alors       2694 
+ok alors      02694 
+ok alors 002694 
+ok alors 0002694         
+ok alors 02694      
+ok alors 000000002694 
+ok alors 000000002694 
+ok alors 000000002694 
+ok alors 000000002694      
+ok alors 00ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors 000000000000000ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c   
+ok alors   ffffd96c 
+ok alors ffffd96c   
+ok alors   ffffd96c 
+ok alors   ffffd96c 
+ok alors   ffffd96c 
+ok alors   ffffd96c 
+ok alors ffffd96c 
+ok alors ffffd96c        
+ok alors ffffd96c   
+ok alors 0000ffffd96c 
+ok alors 0000ffffd96c 
+ok alors 0000ffffd96c 
+ok alors 0000ffffd96c      
+ok alors 0000ffffd96c  la le printf marche       2695 
+ok alors 2694
+ok alors 2694
+ok alors 2694
+ok alors 2694
+ok alors 2694
+ok alors 2694
+ok alors 2694
+ok alors 2694
+ok alors 2694
+ok alors 2694
+ok alors 2694
+ok alors 2694
+ok alors 2694
+ok alors 2694
+ok alors 2694
+ok alors 2694
+ok alors 2694 
+ok alors 2694
+ok alors 2694   
+ok alors 00000000000000000002694
+ok alors 2694
+ok alors 2694
+ok alors 2694      
+ok alors      02694
+ok alors 02694     
+ok alors      02694
+ok alors      02694
+ok alors       2694
+ok alors      02694
+ok alors 002694
+ok alors 0002694        
+ok alors 02694     
+ok alors 000000002694
+ok alors 000000002694
+ok alors 000000002694
+ok alors 000000002694     
+ok alors 00FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors 000000000000000FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C  
+ok alors   FFFFD96C
+ok alors FFFFD96C  
+ok alors   FFFFD96C
+ok alors   FFFFD96C
+ok alors   FFFFD96C
+ok alors   FFFFD96C
+ok alors FFFFD96C
+ok alors FFFFD96C       
+ok alors FFFFD96C  
+ok alors 0000FFFFD96C
+ok alors 0000FFFFD96C
+ok alors 0000FFFFD96C
+ok alors 0000FFFFD96C     
+ok alors 9876
+ok alors 9876
+ok alors 9876
+ok alors 9876
+ok alors 9876
+ok alors 9876
+ok alors 9876
+ok alors 9876
+ok alors 9876
+ok alors 9876
+ok alors 9876
+ok alors 9876
+ok alors 9876
+ok alors 9876
+ok alors 9876
+ok alors 9876
+ok alors 9876 
+ok alors 9876
+ok alors 9876   
+ok alors 00000000000000000009876
+ok alors 9876
+ok alors 9876
+ok alors 9876      
+ok alors      09876
+ok alors 09876     
+ok alors      09876
+ok alors      09876
+ok alors       9876
+ok alors      09876
+ok alors 009876
+ok alors 0009876        
+ok alors 09876     
+ok alors 000000009876
+ok alors 000000009876
+ok alors 000000009876
+ok alors 000000009876     
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 00000000000004294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420
+ok alors 4294957420     
+ok alors 4294957420
+ok alors 004294957420
+ok alors 004294957420
+ok alors 004294957420
+ok alors 004294957420     
+testt = 0
+test = -9223372036854775807
+test = 4294967296
+4294967295
+4294967296
+4294967254
+42949672544999999999
+4999999999
+4294967296
+4294967295
+4294967296
+4294967296
+this is
+test = -9223372036854775808
+test =  04704
+0x2a
+0x7fffffffffffffff
+0
+0x2a
+0X2A
+    0x2a
+0x00002a
+0x2a    
+@moulitest:  
++
+ok alors 4294957420
+test = 
+test = p
+test = pr
+test = pre
+test = prec
+test = preci
+test = precis
+test = precis
+test = precis
+test =   precis
+      this is a string
+th is a string
+   th is a string
+           is a string
+ is a string
+      is a string
+this       is a string
+th is a string
+th    is a string
+           is a string
+ is a string
+      is a string
+100000000
+100000000
+100000000
+100000000
+ffffffff00000000
+fffffffeffffffff
+test = 4294967296
+@moulitest: (null)
+test = %
+test =     %
+test = %    
+test = %
+test = %
+4294967296
+test =     %
+test = %    
+test = %
+this is a string
+9223372036854775807
+ffffffff
+test =  000012345
+0x7fffffffffffffff
+test = % et 42
+@moulitest: 0
+
+bay
+ᔸ
+我
+我是一只猫。
+test = -12345
+test = cfc7
+test = c7
+test = ffffcfc7
+test = ffffcfc7
+test = ffffcfc7
+test = ffffcfc7
+test = 53191
+test = 199
+test = 4294954951
+test = 4294954951
+test = 4294954951
+test = 4294954951
+test = 147707
+test = 307
+test = 37777747707
+test = 37777747707
+test = 37777747707
+test = 37777747707
+test = string
+test = string
+test = string
+test = string
+test = string
+test = string
+test = 0
++42  
+test = 9223372036854775807
