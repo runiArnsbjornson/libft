@@ -6,21 +6,28 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/09 13:29:45 by jdebladi          #+#    #+#              #
-#    Updated: 2017/02/22 17:32:55 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/02/24 04:16:54 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.c \
+SRCS = srcs/main.c \
 	srcs/search.c \
 	srcs/get.c \
-	handlers/printi.c \
-	handlers/printl.c \
-	handlers/printll.c \
-	handlers/prints.c \
-	handlers/printls.c \
+	srcs/func.c \
+	srcs/printer.c \
+	srcs/wprinter.c \
+	handlers/char_handler.c \
+	handlers/dec_handler.c \
+	handlers/oct_handler.c \
+	handlers/hex_handler.c \
+	handlers/percent_handler.c \
+	handlers/string_handler.c \
 	handlers/utf8_convert.c \
+	Libft/ft_isdigit.c \
+	Libft/ft_isupper.c \
 	Libft/ft_putchar.c \
-	Libft/ft_isdigit.c
+	Libft/ft_strclr.c \
+	Libft/ft_strlen.c
 
 OBJS = $(SRCS:.c=.o)
 

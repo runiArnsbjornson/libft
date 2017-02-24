@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 16:32:21 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/02/22 17:48:31 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/02/24 05:55:00 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,10 @@ void	get_flag(const char *fmt, t_flag *f)
 	if (*fmt == '#')
 		f->lag_htag = 1;
 	if (*fmt == '.')
+	{
+		f->lag_dot = 1;
 		get_preci(fmt, f, 1);
+	}
 	if (*fmt == 'j')
 		f->lag_j = 1;
 	if (*fmt == 'z')
@@ -59,7 +62,7 @@ void	get_flag(const char *fmt, t_flag *f)
 
 void	get(const char *fmt, t_flag *f, int i)
 {
-	while (fmt[i] && fmt && i < f->len)
+	while (fmt[i] && fmt && i <= f->len)
 	{
 		get_flag(&fmt[i], f);
 		i++;
