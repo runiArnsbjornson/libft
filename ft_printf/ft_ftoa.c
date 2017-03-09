@@ -1,36 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_ftoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 16:42:07 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/02/27 18:50:06 by jdebladi         ###   ########.fr       */
+/*   Created: 2017/03/06 18:47:02 by jdebladi          #+#    #+#             */
+/*   Updated: 2017/03/09 17:48:23 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <float.h>
+#include <stdio.h>
 
-char	*ft_itoa_base(long long n, int base)
+int		ft_pwr(int nbr, int pwr);
+char	*ft_strdup(const char *s);
+
+char	*ft_ftoa(long double n, int precision)
 {
 	char	buf[64];
 	char	*ret;
 	int		i;
 	int		neg;
+	int		carac;
+	long long	digit;
+	long double	mantis;
 
 	i = 64;
-	buf[--i] = 0;
-	if (n == 0)
-		buf[--i] = '0';
 	neg = n < 0 ? 1 : 0;
-	n = n < 0 ? n : -n;
-	while (n)
+	carac = (long long)n;
+	mantis = n < 0 ? n - carac : -n + carac;
+	carac = n < 0 ? carac : -carac;
+	buf[--i] = 0;
+	if (precision != 0)
 	{
-		buf[--i] = -(n % base) >= 10 ? -(n % base) + '7' : -(n % base) + '0';
-		n /= base;
+		digit = mantis * ft_pwr(10, precision);
+		while (digit)
+		{
+			buf[--i] = -(digit % 10) + '0';
+			digit /= 10;
+		}
+		buf[--i] = '.';
 	}
-	if (neg && base == 10)
+	while (carac)
+	{
+		buf[--i] = -(carac % 10) + '0';
+		carac /= 10;
+	}
+	if (neg)
 		buf[--i] = '-';
 	ret = ft_strdup(&buf[i]);
 	return (ret);

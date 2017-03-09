@@ -67,7 +67,6 @@ char		*conversion_utf8(char* buffer, size_t index, int codePoint)
 		/*La valeur est trop grande pour entrer dans le premier octet: On ajoute ses six bits de poids faible à la fin.*/
 		const unsigned int MasqueHexet = 0x0000003F;
 		const unsigned char PrefixeHexet = 0x80;
-		unsigned int bitsHexet = bitsCodePoint & MasqueHexet;
 		unsigned char hexet = (unsigned char)(bitsCodePoint & MasqueHexet) | PrefixeHexet;
 		push_uchar(buffer, &index, hexet);
 		++nbHexetsEcrits;
@@ -116,15 +115,18 @@ void TestUtf8(int codePoint)
 
 void TestConversion(void)
 {
-	TestUtf8('a');
-	TestUtf8(L'é');
-	TestUtf8(L'∑');
-	TestUtf8(232);
-	TestUtf8(0x0000A0); /*Quelques valeurs exemple*/
-	TestUtf8(0x002554);
-	TestUtf8(0x00FEFF); /*La fameuse BOM*/
-	TestUtf8(0x00FFFF);
-	TestUtf8(0x010000);
+	TestUtf8(L'œ');
+	TestUtf8(2);
+	TestUtf8(3);
+	TestUtf8(0);
+	TestUtf8(4); /*Quelques valeurs exemple*/
+	TestUtf8(5);
+	TestUtf8(6); /*La fameuse BOM*/
+	TestUtf8(7);
+	TestUtf8(9);
+	TestUtf8(10);
+	TestUtf8(11);
+	TestUtf8(12);
 	TestUtf8(0x10000 * 17 - 1);
 	/*Cette valeur est illégale en Unicode (car elle ne peut pas être encodée en UTF-16),
 	  mais reste acceptée par la fonction car elle ne dépasse pas 21 bits.*/

@@ -6,40 +6,74 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 15:22:14 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/02/24 14:04:35 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/09 15:11:55 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void				printchar(char **s, int c)
+int					htag_format(char *buf, int i, t_flag *f, int len)
 {
-	if (s)
+	len = ft_strlen(&buf[i]);
+	if (f->conv == 'o' || f->conv == 'O' || f->conv == 'x' || f->conv == 'X' ||
+	f->conv == 'p')
 	{
-		**s = c;
-		++(*s);
+		if (f->lag_htag && f->conv != 'o' && f->conv != 'O')
+		{
+			if (f->conv == 'x' || f->conv == 'X' || f->conv == 'p')
+				buf[--i] = f->start == 'a' ? 'x' : 'X';
+			buf[--i] = '0';
+		}
+		if (f->lag_htag && (f->conv == 'o' || f->conv == 'O'))
+		{
+			if (f->lag_dot && f->preci)
+			{
+				i = buf[i] == '0' ? i : i - 1;
+				buf[i] = '0';
+			}
+			else
+				buf[--i] = '0';
+		}
 	}
-	else
-		(void)ft_putchar(c);
+	return (i);
 }
 
 int					zero_fill(char *buf, int i, t_flag *f, int len)
 {
+	int size;
+
 	len = ft_strlen(&buf[i]);
-	if (f->lag_zero && f->width > 0 && !f->lag_minus && !f->preci)
+	if (f->lag_dot && f->conv != '%' && f->conv)
 	{
-		while (len < f->width)
-		{
+		while (f->preci > len++)
 			buf[--i] = '0';
-			f->width--;
-		}
 	}
-	while (f->preci > len)
+	if ((f->lag_zero && !f->lag_dot && !f->lag_htag && !f->lag_minus) ||
+		((f->conv == '%' || f->conv == 0) && f->lag_zero))
 	{
-		buf[--i] = '0';
-		len++;
+		while (f->width > len++)
+			buf[--i] = '0';
 	}
+	if (f->lag_zero && !f->lag_dot && f->lag_htag && !f->lag_minus)
+	{
+		if (f->conv == 'o' || f->conv == 'O')
+			size = 1;
+		if (f->conv == 'x' || f->conv == 'X' || f->conv == 'p')
+			size = 2;
+		while (f->width - size > len++)
+			buf[--i] = '0';
+	}
+	i = htag_format(buf, i, f, 0);
 	return (i);
+}
+
+long double			float_size(long double n, va_list args, t_flag *f)
+{
+	if (f->lag_L)
+		n = va_arg(args, long double);
+	else
+		n = va_arg(args, double);
+	return (n);
 }
 
 long long			int_size(long long n, va_list args, t_flag *f)

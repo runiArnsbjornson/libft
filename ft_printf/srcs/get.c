@@ -6,21 +6,11 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 16:32:21 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/02/24 05:55:00 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/09 15:10:22 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-
-void	get_preci(const char *fmt, t_flag *f, int i)
-{
-	while (ft_isdigit(fmt[i]) == 1)
-	{
-		f->preci *= 10;
-		f->preci += fmt[i] - '0';
-		i++;
-	}
-}
 
 void	check_size(const char *fmt, t_flag *f, int i)
 {
@@ -37,7 +27,7 @@ void	check_size(const char *fmt, t_flag *f, int i)
 	}
 }
 
-void	get_flag(const char *fmt, t_flag *f)
+void	get_flag(const char *fmt, t_flag *f, va_list args)
 {
 	if (*fmt == '+')
 		f->lag_plus = 1;
@@ -50,21 +40,24 @@ void	get_flag(const char *fmt, t_flag *f)
 	if (*fmt == '.')
 	{
 		f->lag_dot = 1;
-		get_preci(fmt, f, 1);
+		get_preci(fmt, f, args, 1);
 	}
 	if (*fmt == 'j')
 		f->lag_j = 1;
 	if (*fmt == 'z')
 		f->lag_z = 1;
+	if (*fmt == 'L')
+		f->lag_L = 1;
 	if (*fmt == 'h' || *fmt == 'l')
 		check_size(fmt, f, 0);
 }
 
-void	get(const char *fmt, t_flag *f, int i)
+void	get(const char *fmt, t_flag *f, va_list args, int i)
 {
+	precision(fmt, f, args, 1);
 	while (fmt[i] && fmt && i <= f->len)
 	{
-		get_flag(&fmt[i], f);
+		get_flag(&fmt[i], f, args);
 		i++;
 	}
 }

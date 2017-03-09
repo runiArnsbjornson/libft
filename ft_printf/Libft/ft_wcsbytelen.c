@@ -1,37 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_wcsbytelen.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 16:42:07 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/02/27 18:50:06 by jdebladi         ###   ########.fr       */
+/*   Created: 2017/03/01 17:50:44 by jdebladi          #+#    #+#             */
+/*   Updated: 2017/03/01 18:24:41 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa_base(long long n, int base)
+int		ft_wcsbytelen(wchar_t *wc)
 {
-	char	buf[64];
-	char	*ret;
+	char	*bin;
+	int		len;
+	int		nb_bytes;
 	int		i;
-	int		neg;
 
-	i = 64;
-	buf[--i] = 0;
-	if (n == 0)
-		buf[--i] = '0';
-	neg = n < 0 ? 1 : 0;
-	n = n < 0 ? n : -n;
-	while (n)
+	nb_bytes = 0;
+	i = 0;
+	while (wc[i])
 	{
-		buf[--i] = -(n % base) >= 10 ? -(n % base) + '7' : -(n % base) + '0';
-		n /= base;
+		bin = ft_itoa_base(wc[i], 2);
+		len = ft_strlen(bin);
+		free(bin);
+		if (len <= 7)
+			nb_bytes += 1;
+		else if (len > 7 && len <= 11)
+			nb_bytes += 2;
+		else if (len > 11 && len <= 16)
+			nb_bytes += 3;
+		else
+			nb_bytes += 4;
+		++i;
 	}
-	if (neg && base == 10)
-		buf[--i] = '-';
-	ret = ft_strdup(&buf[i]);
-	return (ret);
+	return (nb_bytes);
 }

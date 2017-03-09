@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:44:10 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/02/24 15:48:08 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/09 16:31:57 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ typedef struct		s_flag
 	int				lag_hh;
 	int				lag_l;
 	int				lag_ll;
+	int				lag_L;
 	int				lag_j;
 	int				lag_z;
 	int				lag_dot;
@@ -50,21 +51,33 @@ typedef struct		s_flag
 	char			start;
 }					t_flag;
 
-int					char_handler(char **out, va_list args, t_flag *f);
-int					dec_handler(char **out, va_list args, t_flag *f);
-int					oct_handler(char **out, va_list args, t_flag *f);
-int					hex_handler(char **out, va_list args, t_flag *f);
-int					percent_handler(char **out, t_flag *f);
-int					string_handler(char **out, va_list args, t_flag *f);
+/*
+** handlers
+*/
+
+int					bin_handler(va_list args, t_flag *f);
+int					char_handler(va_list args, t_flag *f);
+int					dec_handler(va_list args, t_flag *f);
+int					float_handler(va_list args, t_flag *f);
+int					hex_handler(va_list args, t_flag *f);
+int					oct_handler(va_list args, t_flag *f);
+int					percent_handler(t_flag *f);
+int					string_handler(va_list args, t_flag *f);
 char				*utf8_convert(char *buf, size_t buf_size, int code);
-int					zero_fill(char *buf, int i, t_flag *f, int len);
+
+/*
+** srcs
+*/
+
+long double			float_size(long double n, va_list args, t_flag *f);
+void				get(const char *fmt, t_flag *f, va_list args, int i);
+void				get_preci(const char *fmt, t_flag *f, va_list args, int i);
 long long			int_size(long long n, va_list args, t_flag *f);
+void				precision(const char *fmt, t_flag *f, va_list args, int i);
+int					printer(const char *s, t_flag *f, int len);
+void				search(const char *fmt, t_flag *f, va_list args, int i);
 unsigned long long	uint_size(unsigned long long n, va_list args, t_flag *f);
-int					printer(char **out, const char *s, t_flag *f, int len);
-int					wprinter(char **out, const wchar_t *ls, t_flag *f, int len);
-void				printchar(char **s, int c);
-void				wprintchar(char **s, int c);
-void				search(const char *fmt, t_flag *f, int i);
-void				get(const char *fmt, t_flag *f, int i);
+void				wprinter(const wchar_t *ls, t_flag *f, int len);
+int					zero_fill(char *buf, int i, t_flag *f, int len);
 
 #endif

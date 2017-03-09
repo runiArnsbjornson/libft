@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:32:18 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/02/13 14:40:30 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/02 11:40:06 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int				ft_isprint(int c);
 int				ft_isspace(int c);
 int				ft_isupper(int c);
 char			*ft_itoa(int n);
-char			*ft_itoa_base(int n, int base);
+char			*ft_itoa_base(long long n, int base);
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdelone(t_list **alst, void (*del)(void*, size_t));
@@ -56,6 +56,7 @@ void			ft_memdel(void **ap);
 void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_occurence(int n, char **argv);
+int				ft_printf(const char *format, ...);
 void			ft_putchar(int c);
 void			ft_putchar_fd(int c, int fd);
 void			ft_putendl(char const *s);
@@ -102,6 +103,12 @@ char			*ft_strtrim(char const *s);
 char			**ft_tab(size_t col, size_t line);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
+int				ft_wcbytesize(wchar_t wc);
+int				ft_wcsbytelen(wchar_t *wc);
+int				ft_wcscmp(const wchar_t *s1, const wchar_t *s2);
+size_t			ft_wcslen(const wchar_t *s);
+int				ft_wcsnlen(const wchar_t *s, size_t n);
+int				ft_wcsnbytelen(const wchar_t *s, size_t n);
 
 /*
 **	not ft_functions

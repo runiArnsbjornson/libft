@@ -1,37 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa_base.c                                     :+:      :+:    :+:   */
+/*   ft_wcsnlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/27 16:42:07 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/02/27 18:50:06 by jdebladi         ###   ########.fr       */
+/*   Created: 2017/03/02 11:39:06 by jdebladi          #+#    #+#             */
+/*   Updated: 2017/03/02 12:00:54 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_itoa_base(long long n, int base)
+int		ft_wcsnlen(const wchar_t *s, size_t n)
 {
-	char	buf[64];
-	char	*ret;
-	int		i;
-	int		neg;
+	const wchar_t	*p;
+	size_t			byte_size;
 
-	i = 64;
-	buf[--i] = 0;
-	if (n == 0)
-		buf[--i] = '0';
-	neg = n < 0 ? 1 : 0;
-	n = n < 0 ? n : -n;
-	while (n)
+	p = s;
+	byte_size = ft_wcbytesize(*p);
+	while (*p && byte_size <= n)
 	{
-		buf[--i] = -(n % base) >= 10 ? -(n % base) + '7' : -(n % base) + '0';
-		n /= base;
+		byte_size += ft_wcbytesize(*p);
+		++p;
 	}
-	if (neg && base == 10)
-		buf[--i] = '-';
-	ret = ft_strdup(&buf[i]);
-	return (ret);
+	return (p - s);
 }

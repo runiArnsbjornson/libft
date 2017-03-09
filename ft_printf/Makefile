@@ -6,7 +6,7 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/09 13:29:45 by jdebladi          #+#    #+#              #
-#    Updated: 2017/02/24 04:16:54 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/03/09 16:34:35 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,26 +14,36 @@ SRCS = srcs/main.c \
 	srcs/search.c \
 	srcs/get.c \
 	srcs/func.c \
+	srcs/precision.c \
 	srcs/printer.c \
 	srcs/wprinter.c \
+	handlers/bin_handler.c \
 	handlers/char_handler.c \
 	handlers/dec_handler.c \
-	handlers/oct_handler.c \
+	handlers/float_handler.c \
 	handlers/hex_handler.c \
+	handlers/oct_handler.c \
 	handlers/percent_handler.c \
 	handlers/string_handler.c \
 	handlers/utf8_convert.c \
 	Libft/ft_isdigit.c \
 	Libft/ft_isupper.c \
-	Libft/ft_putchar.c \
-	Libft/ft_strclr.c \
-	Libft/ft_strlen.c
+	Libft/ft_itoa_base.c \
+	Libft/ft_pwr.c \
+	libft/ft_strdup.c \
+	Libft/ft_strlen.c \
+	Libft/ft_wcbytesize.c \
+	Libft/ft_wcsbytelen.c \
+	Libft/ft_wcscmp.c \
+	Libft/ft_wcslen.c \
+	Libft/ft_wcsnbytelen.c \
+	libft/ft_wcsnlen.c
 
 OBJS = $(SRCS:.c=.o)
 
-INCL = includes/
+INCL = -Iincludes/
 
-CFLAGS = -Werror -Wextra -Wall -I$(INCL)
+CFLAGS = -Wall -Wextra -Werror
 
 NAME = libftprintf.a
 
@@ -41,7 +51,7 @@ all: $(NAME)
 
 %.o: %.c
 	@echo "\033[K\033[34mLibft :\033[0m [ Compiling :\033[33m $^\033[0m]\033[1A"
-	@gcc -g -o $@ -c $< $(CFLAGS)
+	@gcc -g -o $@ -c $< $(CFLAGS) $(INCL)
 
 $(NAME): $(OBJS)
 	@ar rc $(NAME) $(OBJS)

@@ -1,59 +1,53 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   oct_handler.c                                      :+:      :+:    :+:   */
+/*   bin_handler.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/23 15:20:01 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/02 18:05:56 by jdebladi         ###   ########.fr       */
+/*   Created: 2017/02/27 14:58:02 by jdebladi          #+#    #+#             */
+/*   Updated: 2017/03/09 18:44:43 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int			oct_preci_zero(char *buf, int i, t_flag *f, int len)
+int			bin_format(char *buf, int i, t_flag *f, int len)
 {
 	len = ft_strlen(&buf[i]);
-	if (f->lag_dot && f->preci == 0 && !f->lag_htag)
-		return (i);
-	else if (f->lag_dot && f->preci)
-	{
-		while (f->preci > len++)
-			buf[--i] = '0';
-	}
-	else if (f->lag_zero && !f->lag_dot)
-	{
-		while (f->width > len++)
-			buf[--i] = '0';
-	}
-	else
+	i = zero_fill(buf, i, f, len);
+	if (f->lag_htag && buf[i] != '0')
 		buf[--i] = '0';
 	return (i);
 }
 
-char		*oct_to_string(char *buf, int i, unsigned long long n, t_flag *f)
+char		*bin_to_string(char *buf, int i, unsigned long long n, t_flag *f)
 {
 	buf[--i] = 0;
 	if (n == 0)
 	{
-		i = oct_preci_zero(buf, i, f, 0);
-		return (&buf[i]);
+		if (f->lag_dot == 1 && f->preci == 0)
+		{
+			if (f->lag_htag == 1)
+				buf[--i] = '0';
+			return (&buf[i]);
+		}
+		buf[--i] = '0';
 	}
 	while (n)
 	{
-		buf[--i] = n % 8 + '0';
-		n /= 8;
+		buf[--i] = n % 2 + '0';
+		n /= 2;
 	}
-	i = zero_fill(buf, i, f, 0);
+	i = bin_format(buf, i, f, 0);
 	return (&buf[i]);
 }
 
-int			oct_handler(va_list args, t_flag *f)
+int			bin_handler(va_list args, t_flag *f)
 {
 	long long	n;
 	char		*s;
-	char		buf[32 + f->width];
+	char		buf[64 + f->width];
 
 	if (ft_isupper(f->conv) == 1)
 	{
@@ -61,6 +55,6 @@ int			oct_handler(va_list args, t_flag *f)
 		f->lag_l = 1;
 	}
 	n = uint_size(0, args, f);
-	s = oct_to_string(buf, 32 + f->width, n, f);
+	s = bin_to_string(buf, 32 + f->width, n, f);
 	return (printer(s, f, ft_strlen(s)));
 }

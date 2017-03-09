@@ -6,107 +6,94 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/13 12:22:15 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/02/24 11:57:09 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/01 19:27:09 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-int		string_width(char **out, const char *s, t_flag *f, int len)
+int		string_width(const char *s, t_flag *f, int len)
 {
 	int pc;
 
 	pc = 0;
-	f->preci = len > f->preci ? f->preci : len;
-	while (f->width > f->preci)
+	len = f->preci < len ? f->preci : len;
+	while (f->width > len)
 	{
-		printchar(out, ' ');
+		if (f->lag_zero == 1)
+			write(1, "0", 1);
+		else
+			write(1, " ", 1);
 		--f->width;
 		++pc;
 	}
-	while (*s)
-	{
-		if (f->preci > 0)
-		{
-			printchar(out, *s);
-			--f->preci;
-			++pc;
-		}
-		s++;
-	}
+	write(1, s, len);
+	pc += len;
 	return (pc);
 }
 
-int		string_printer(char **out, const char *s, t_flag *f, int len)
+int		string_printer(const char *s, t_flag *f, int len)
 {
 	int pc;
 
 	pc = 0;
 	if (f->lag_minus)
 	{
-		while (*s)
-		{
-			if (f->preci > pc)
-			{
-				printchar(out, *s);
-				++pc;
-			}
-			s++;
-		}
+		len = f->preci < len ? f->preci : len;
+		write(1, s, len);
+		pc += len;
 		while (f->width > pc)
 		{
-			printchar(out, ' ');
+			write(1, " ", 1);
 			++pc;
 		}
 	}
 	else
-		pc += string_width(out, s, f, len);
+		pc += string_width(s, f, len);
 	return (pc);
 }
 
-int		print_width(char **out, const char *s, t_flag *f, int len)
+int		print_width(const char *s, t_flag *f, int len)
 {
 	int pc;
 
 	pc = 0;
 	while (f->width && f->width > len)
 	{
-		printchar(out, ' ');
+		if (f->lag_zero && (f->conv == 's' || f->conv == 'S' || f->conv == 'c'
+		|| f->conv == 'C'))
+			write(1, "0", 1);
+		else
+			write(1, " ", 1);
 		--f->width;
-		pc++;
+		++pc;
 	}
-	while (*s)
-	{
-		printchar(out, *s++);
-		pc++;
-	}
+	write(1, s, len);
+	pc += len;
 	return (pc);
 }
 
-int		printer(char **out, const char *s, t_flag *f, int len)
+int		printer(const char *s, t_flag *f, int len)
 {
 	int pc;
 
 	pc = 0;
-	if (f->preci != 0 && (f->conv == 's' || f->conv == 'S'))
-		pc += string_printer(out, s, f, len);
+	if (f->lag_dot && (f->conv == 's' || f->conv == 'S'))
+		pc += string_printer(s, f, len);
 	else
 	{
 		if (f->lag_minus)
 		{
-			while (*s)
-			{
-				printchar(out, *s++);
-				pc++;
-			}
+			write(1, s, len);
+			pc += len;
 			while (f->width > pc)
 			{
-				printchar(out, ' ');
+				write(1, " ", 1);
 				++pc;
 			}
 		}
 		else
-			pc += print_width(out, s, f, len);
+			pc += print_width(s, f, len);
 	}
 	return (pc);
 }
