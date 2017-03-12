@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:32:18 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/02 11:40:06 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/12 19:28:43 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <float.h>
 
 # define BUFF_SIZE 32
 
@@ -30,17 +31,21 @@ long			ft_abs(int nb);
 int				ft_atoi(const char *str);
 int				ft_bool_strchr(const char *s, int c);
 void			ft_bzero(void *s, size_t n);
+int				ft_log(long long nbr);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isdigit(int c);
+int				ft_isinf(double x);
 int				ft_islower(int c);
+int				ft_isnan(double x);
 int				ft_isprime(int nb);
 int				ft_isprint(int c);
 int				ft_isspace(int c);
 int				ft_isupper(int c);
 char			*ft_itoa(int n);
 char			*ft_itoa_base(long long n, int base);
+long long		ft_lpwr(long long nb, int pwr);
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstdelone(t_list **alst, void (*del)(void*, size_t));

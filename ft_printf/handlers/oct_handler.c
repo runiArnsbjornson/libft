@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 15:20:01 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/02 18:05:56 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/12 13:00:02 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int			oct_handler(va_list args, t_flag *f)
 {
 	long long	n;
 	char		*s;
-	char		buf[32 + f->width];
+	char		buf[32 + f->width + f->preci];
 
 	if (ft_isupper(f->conv) == 1)
 	{
@@ -61,6 +61,6 @@ int			oct_handler(va_list args, t_flag *f)
 		f->lag_l = 1;
 	}
 	n = uint_size(0, args, f);
-	s = oct_to_string(buf, 32 + f->width, n, f);
+	s = oct_to_string(buf, 32 + f->width + f->preci, n, f);
 	return (printer(s, f, ft_strlen(s)));
 }

@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:44:10 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/09 16:31:57 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/12 19:26:31 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ typedef struct		s_flag
 /*
 ** handlers
 */
-
 int					bin_handler(va_list args, t_flag *f);
 int					char_handler(va_list args, t_flag *f);
 int					dec_handler(va_list args, t_flag *f);
 int					float_handler(va_list args, t_flag *f);
+char				*float_to_exp(char *buf, int i, long double n, t_flag *f);	
 int					hex_handler(va_list args, t_flag *f);
 int					oct_handler(va_list args, t_flag *f);
 int					percent_handler(t_flag *f);

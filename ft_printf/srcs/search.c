@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 15:04:59 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/09 18:45:40 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/12 13:36:56 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,5 @@ void	search(const char *fmt, t_flag *f, va_list args, int i)
 		++f->i;
 	f->conv = check_conv(fmt[i]);
 	get(fmt, f, args, 1);
-	// printf("\n>len=%d h=%d hh=%d l=%d ll=%d j=%d z=%d .=%d #=%d 0=%d -=%d +=%d ''=%d w=%d p=%d sign=%d conv=%c<\n", f->len, f->lag_h, f->lag_hh, f->lag_l, f->lag_ll, f->lag_j, f->lag_z, f->lag_dot, f->lag_htag, f->lag_zero, f->lag_minus, f->lag_plus, f->lag_space, f->width, f->preci, f->sign, f->conv);
+	// printf("\n>len=%d h=%d hh=%d l=%d ll=%d L=%d j=%d z=%d .=%d #=%d 0=%d -=%d +=%d ''=%d w=%d p=%d sign=%d conv=%c<\n", f->len, f->lag_h, f->lag_hh, f->lag_l, f->lag_ll, f->lag_L, f->lag_j, f->lag_z, f->lag_dot, f->lag_htag, f->lag_zero, f->lag_minus, f->lag_plus, f->lag_space, f->width, f->preci, f->sign, f->conv);
 }

@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 16:57:12 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/02 17:31:26 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/12 12:59:47 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,13 @@ int			hex_handler(va_list args, t_flag *f)
 {
 	long long	n;
 	char		*s;
-	char		buf[32 + f->width];
+	char		buf[32 + f->width + f->preci];
 
 	if (f->conv == 'X')
 		f->start = 'A';
 	if (f->conv == 'p')
 		f->lag_htag = 1;
 	n = uint_size(0, args, f);
-	s = hex_to_string(buf, 32 + f->width, n, f);
+	s = hex_to_string(buf, 32 + f->width + f->preci, n, f);
 	return (printer(s, f, ft_strlen(s)));
 }

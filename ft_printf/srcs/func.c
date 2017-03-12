@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 15:22:14 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/09 15:11:55 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/12 14:35:15 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,16 @@ long long			int_size(long long n, va_list args, t_flag *f)
 {
 	if (f->lag_ll == 1)
 		n = va_arg(args, long long);
+	else if (f->lag_j == 1)
+		n = (intmax_t)va_arg(args, long long);
+	else if (f->lag_z == 1)
+		n = va_arg(args, ssize_t);
 	else if (f->lag_l == 1)
 		n = va_arg(args, long);
 	else if (f->lag_hh == 1)
 		n = (signed char)va_arg(args, int);
 	else if (f->lag_h == 1)
 		n = (short)va_arg(args, int);
-	else if (f->lag_j == 1)
-		n = (intmax_t)va_arg(args, long long);
-	else if (f->lag_z == 1)
-		n = va_arg(args, ssize_t);
 	else
 		n = va_arg(args, int);
 	return (n);

@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/06 18:05:05 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/09 18:29:22 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/12 18:52:47 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,16 @@ int		float_format(char *buf, int i, t_flag *f, int len)
 
 int		float_mantis(char *buf, int i, t_flag *f, long double mantis)
 {
-	int j;
-	int digit;
+	int			j;
+	int			digit;
+	long double	approx;
 
 	j = 0;
-	mantis = -mantis * (float)ft_pwr(10, f->preci);
+	approx = -mantis * ft_pwr(10, f->preci + 1);
+	mantis = -mantis * ft_pwr(10, f->preci);
 	digit = (float)mantis;
+	approx = approx - digit * 10;
+	digit += (int)approx >= 5 ? 1 : 0;
 	while (j < f->preci)
 	{
 		buf[--i] = digit % 10 + '0';
@@ -97,12 +101,21 @@ int		float_handler(va_list args, t_flag *f)
 {
 	long double	n;
 	char		*s;
-	char		buf[32 + f->width];
+	char		buf[32 + f->width + f->preci];
 
-	// if (ft_isupper(f->conv) == 1)
-	// {
-	// }
+	if (ft_isupper(f->conv))
+		f->start = 'A';
 	n = float_size(0, args, f);
-	s = float_to_string(buf, 32 + f->width, n, f);
+	if (ft_isnan(n))
+		return (f->start == 'a' ? printer("nan", f, 3) : printer("NAN", f, 3));
+	if (ft_isinf(n) == 1)
+		return (f->start == 'a' ? printer("inf", f, 3) : printer("INF", f, 3));
+	if (ft_isinf(n) == -1)
+		return (f->start == 'a' ? printer("-inf", f, 4) :
+		printer("-INF", f, 4));
+	if (f->conv == 'e' || f->conv == 'E')
+		s = float_to_exp(buf, 32 + f->width + f->preci, n, f);
+	else if (f->conv == 'f' || f->conv == 'F')
+		s = float_to_string(buf, 32 + f->width + f->preci, n, f);
 	return (printer(s, f, ft_strlen(s)));
 }

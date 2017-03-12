@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 11:33:05 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/09 18:45:16 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/12 19:24:16 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int		ft_handlers(va_list args, t_flag *f, int pc)
 		pc += char_handler(args, f);
 	else if (f->conv == 's' || f->conv == 'S')
 		pc += string_handler(args, f);
-	else if (f->conv == 'f' || f->conv == 'F')
+	else if (f->conv == 'f' || f->conv == 'F' || f->conv == 'e' || f->conv == 'E')
 		pc += float_handler(args, f);
 	else if (f->conv == '%')
 		pc += percent_handler(f);

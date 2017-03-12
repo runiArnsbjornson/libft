@@ -6,7 +6,7 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/09 13:29:45 by jdebladi          #+#    #+#              #
-#    Updated: 2017/03/09 16:34:35 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/03/12 19:27:44 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,16 @@ SRCS = srcs/main.c \
 	handlers/char_handler.c \
 	handlers/dec_handler.c \
 	handlers/float_handler.c \
+	handlers/exp_handler.c \
 	handlers/hex_handler.c \
 	handlers/oct_handler.c \
 	handlers/percent_handler.c \
 	handlers/string_handler.c \
 	handlers/utf8_convert.c \
+	Libft/ft_log.c \
 	Libft/ft_isdigit.c \
+	Libft/ft_isinf.c \
+	Libft/ft_isnan.c \
 	Libft/ft_isupper.c \
 	Libft/ft_itoa_base.c \
 	Libft/ft_pwr.c \

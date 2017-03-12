@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/06 18:47:02 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/09 17:48:23 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/12 12:33:01 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,46 @@
 int		ft_pwr(int nbr, int pwr);
 char	*ft_strdup(const char *s);
 
+int		ft_ftoa_dependancy(char *buf, int i, long double mantis, int precision)
+{
+	int j;
+	int digit;
+	long double approx;
+
+	j = 0;
+	approx = (float)(-mantis * ft_pwr(10, precision + 1));
+	mantis = -mantis * ft_pwr(10, precision);
+	digit = (float)mantis;
+	approx = (float)approx - digit * 10;
+	digit += (int)approx >= 5 ? 1 : 0;
+	while (j++ < precision)
+	{
+		buf[--i] = digit % 10 + '0';
+		digit /= 10;
+	}
+	buf[--i] = '.';
+	return (i);
+}
+
 char	*ft_ftoa(long double n, int precision)
 {
 	char	buf[64];
 	char	*ret;
 	int		i;
 	int		neg;
-	int		carac;
-	long long	digit;
+	long long	carac;
 	long double	mantis;
 
 	i = 64;
-	neg = n < 0 ? 1 : 0;
-	carac = (long long)n;
-	mantis = n < 0 ? n - carac : -n + carac;
-	carac = n < 0 ? carac : -carac;
 	buf[--i] = 0;
-	if (precision != 0)
-	{
-		digit = mantis * ft_pwr(10, precision);
-		while (digit)
-		{
-			buf[--i] = -(digit % 10) + '0';
-			digit /= 10;
-		}
-		buf[--i] = '.';
-	}
+	neg = n < 0 ? 1 : 0;
+	n = n < 0 ? n : -n;
+	carac = (long long)n;
+	mantis = n - (long double)carac;
+	if (precision)
+		i = ft_ftoa_dependancy(buf, i, mantis, precision);
+	if (carac == 0)
+		buf[--i] = '0';
 	while (carac)
 	{
 		buf[--i] = -(carac % 10) + '0';

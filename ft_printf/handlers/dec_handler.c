@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/23 12:40:12 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/01 15:16:14 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/12 12:59:01 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,15 @@ int		dec_format(char *buf, int i, t_flag *f, int len)
 			buf[i] = '+';
 		}
 	}
-	if (f->lag_space && f->sign == 1 && !f->preci && !f->lag_plus)
+	if (f->lag_space && f->sign == 1 && !f->lag_plus)
 	{
-		i = buf[i] == '0' ? i : --i;
-		buf[i] = ' ';
+		if (f->preci == len)
+			buf[--i] = ' ';
+		else
+		{
+			i = buf[i] == '0' ? i : --i;
+			buf[i] = ' ';
+		}
 	}
 	return (i);
 }
@@ -96,7 +101,7 @@ int		dec_handler(va_list args, t_flag *f)
 {
 	long long	n;
 	char		*s;
-	char		buf[32 + f->width];
+	char		buf[32 + f->width + f->preci];
 
 	if (ft_isupper(f->conv) == 1)
 	{
@@ -106,12 +111,12 @@ int		dec_handler(va_list args, t_flag *f)
 	if (f->sign)
 	{
 		n = int_size(0, args, f);
-		s = dec_to_string(buf, 32 + f->width, n, f);
+		s = dec_to_string(buf, 32 + f->width + f->preci, n, f);
 	}
 	else
 	{
 		n = uint_size(0, args, f);
-		s = udec_to_string(buf, 32 + f->width, n, f);
+		s = udec_to_string(buf, 32 + f->width + f->preci, n, f);
 	}
 	return (printer(s, f, ft_strlen(s)));
 }

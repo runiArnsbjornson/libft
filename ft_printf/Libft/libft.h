@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:32:18 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/09 18:26:06 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/12 18:49:47 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <float.h>
 
 # define BUFF_SIZE 32
 
@@ -34,7 +35,9 @@ int				ft_isalnum(int c);
 int				ft_isalpha(int c);
 int				ft_isascii(int c);
 int				ft_isdigit(int c);
+int				ft_isinf(double x);
 int				ft_islower(int c);
+int				ft_isnan(double x);
 int				ft_isprime(int nb);
 int				ft_isprint(int c);
 int				ft_isspace(int c);

@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/06 14:45:29 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/06 17:30:39 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/12 12:51:29 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	get_preci(const char *fmt, t_flag *f, va_list args, int i)
 	}
 	else
 	{
+		f->preci = 0;
 		while (ft_isdigit(fmt[i]) == 1)
 		{
 			f->preci *= 10;
