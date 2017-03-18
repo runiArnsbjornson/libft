@@ -6,7 +6,7 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 18:34:05 by jdebladi          #+#    #+#              #
-#    Updated: 2016/12/19 12:02:48 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/03/17 12:45:41 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,17 +19,21 @@ SRC = ft_abs.c \
 	ft_atoi.c \
 	ft_bool_strchr.c \
 	ft_bzero.c \
+	ft_ftoa.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \
 	ft_isdigit.c \
+	ft_isinf.c \
 	ft_islower.c \
+	ft_isnan.c \
 	ft_isprint.c \
 	ft_isprime.c \
 	ft_isspace.c \
 	ft_isupper.c \
 	ft_itoa.c \
 	ft_itoa_base.c \
+	ft_lpwr.c \
 	ft_lstadd.c \
 	ft_lstdel.c \
 	ft_lstdelone.c \
@@ -91,6 +95,12 @@ SRC = ft_abs.c \
 	ft_tab.c \
 	ft_tolower.c \
 	ft_toupper.c \
+	ft_wcbytesize.c \
+	ft_wcsbytelen.c \
+	ft_wcscmp.c \
+	ft_wcslen.c \
+	ft_wcsnbytelen.c \
+	ft_wcsnlen.c \
 	get_next_line.c
 OBJ = $(SRC:.c=.o)
 
