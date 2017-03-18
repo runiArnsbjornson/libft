@@ -6,29 +6,29 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/06 18:47:02 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/12 12:33:01 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/17 13:39:13 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <float.h>
-#include <stdio.h>
+#include "libft.h"
 
-int		ft_pwr(int nbr, int pwr);
-char	*ft_strdup(const char *s);
-
-int		ft_ftoa_dependancy(char *buf, int i, long double mantis, int precision)
+static int		ft_ftoa_mantis(char *buf, long long carac, long double n, int p)
 {
-	int j;
-	int digit;
-	long double approx;
+	int			i;
+	int			j;
+	int			digit;
+	long double	mantis;
+	long double	approx;
 
 	j = 0;
-	approx = (float)(-mantis * ft_pwr(10, precision + 1));
-	mantis = -mantis * ft_pwr(10, precision);
+	i = 63;
+	mantis = n - (long double)carac;
+	approx = -mantis * ft_pwr(10, p + 1);
+	mantis = -mantis * ft_pwr(10, p);
 	digit = (float)mantis;
-	approx = (float)approx - digit * 10;
+	approx = approx - digit * 10;
 	digit += (int)approx >= 5 ? 1 : 0;
-	while (j++ < precision)
+	while (j++ < p)
 	{
 		buf[--i] = digit % 10 + '0';
 		digit /= 10;
@@ -37,23 +37,21 @@ int		ft_ftoa_dependancy(char *buf, int i, long double mantis, int precision)
 	return (i);
 }
 
-char	*ft_ftoa(long double n, int precision)
+char			*ft_ftoa(long double n, int precision)
 {
-	char	buf[64];
-	char	*ret;
-	int		i;
-	int		neg;
+	char		buf[64];
+	char		*ret;
+	int			i;
+	int			neg;
 	long long	carac;
-	long double	mantis;
 
 	i = 64;
 	buf[--i] = 0;
 	neg = n < 0 ? 1 : 0;
 	n = n < 0 ? n : -n;
 	carac = (long long)n;
-	mantis = n - (long double)carac;
 	if (precision)
-		i = ft_ftoa_dependancy(buf, i, mantis, precision);
+		i = ft_ftoa_mantis(buf, carac, n, precision);
 	if (carac == 0)
 		buf[--i] = '0';
 	while (carac)

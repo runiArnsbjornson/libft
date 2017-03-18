@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/22 16:32:21 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/09 15:10:22 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/17 13:02:50 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	get_flag(const char *fmt, t_flag *f, va_list args)
 	if (*fmt == 'z')
 		f->lag_z = 1;
 	if (*fmt == 'L')
-		f->lag_L = 1;
+		f->lag_long = 1;
 	if (*fmt == 'h' || *fmt == 'l')
 		check_size(fmt, f, 0);
 }

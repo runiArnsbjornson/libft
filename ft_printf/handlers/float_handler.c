@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/06 18:05:05 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/12 18:52:47 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/17 13:01:17 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,11 +111,10 @@ int		float_handler(va_list args, t_flag *f)
 	if (ft_isinf(n) == 1)
 		return (f->start == 'a' ? printer("inf", f, 3) : printer("INF", f, 3));
 	if (ft_isinf(n) == -1)
+	{
 		return (f->start == 'a' ? printer("-inf", f, 4) :
-		printer("-INF", f, 4));
-	if (f->conv == 'e' || f->conv == 'E')
-		s = float_to_exp(buf, 32 + f->width + f->preci, n, f);
-	else if (f->conv == 'f' || f->conv == 'F')
-		s = float_to_string(buf, 32 + f->width + f->preci, n, f);
+			printer("-INF", f, 4));
+	}
+	s = float_to_string(buf, 32 + f->width + f->preci, n, f);
 	return (printer(s, f, ft_strlen(s)));
 }

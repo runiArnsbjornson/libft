@@ -6,7 +6,7 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/09 13:29:45 by jdebladi          #+#    #+#              #
-#    Updated: 2017/03/12 19:27:44 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/03/17 13:32:26 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,28 +21,98 @@ SRCS = srcs/main.c \
 	handlers/char_handler.c \
 	handlers/dec_handler.c \
 	handlers/float_handler.c \
-	handlers/exp_handler.c \
 	handlers/hex_handler.c \
 	handlers/oct_handler.c \
 	handlers/percent_handler.c \
 	handlers/string_handler.c \
 	handlers/utf8_convert.c \
-	Libft/ft_log.c \
+	Libft/ft_abs.c \
+	Libft/ft_atoi.c \
+	Libft/ft_bool_strchr.c \
+	Libft/ft_bzero.c \
+	Libft/ft_ftoa.c \
+	Libft/ft_isalnum.c \
+	Libft/ft_isalpha.c \
+	Libft/ft_isascii.c \
 	Libft/ft_isdigit.c \
 	Libft/ft_isinf.c \
+	Libft/ft_islower.c \
 	Libft/ft_isnan.c \
+	Libft/ft_isprint.c \
+	Libft/ft_isprime.c \
+	Libft/ft_isspace.c \
 	Libft/ft_isupper.c \
+	Libft/ft_itoa.c \
 	Libft/ft_itoa_base.c \
+	Libft/ft_lpwr.c \
+	Libft/ft_lstadd.c \
+	Libft/ft_lstdel.c \
+	Libft/ft_lstdelone.c \
+	Libft/ft_lstiter.c \
+	Libft/ft_lstmap.c \
+	Libft/ft_lstnew.c \
+	Libft/ft_memalloc.c \
+	Libft/ft_memccpy.c \
+	Libft/ft_memchr.c \
+	Libft/ft_memcmp.c \
+	Libft/ft_memcpy.c \
+	Libft/ft_memdel.c \
+	Libft/ft_memmove.c \
+	Libft/ft_memset.c \
+	Libft/ft_occurence.c \
+	Libft/ft_putchar.c \
+	Libft/ft_putchar_fd.c \
+	Libft/ft_putendl.c \
+	Libft/ft_putendl_fd.c \
+	Libft/ft_putnbr.c \
+	Libft/ft_putnbr_fd.c \
+	Libft/ft_putstr.c \
+	Libft/ft_putstr_fd.c \
+	Libft/ft_puttab.c \
+	Libft/ft_puttab_fd.c \
 	Libft/ft_pwr.c \
-	libft/ft_strdup.c \
+	Libft/ft_replace.c \
+	Libft/ft_split.c \
+	Libft/ft_sqrt.c \
+	Libft/ft_strcat.c \
+	Libft/ft_strchr.c \
+	Libft/ft_strclr.c \
+	Libft/ft_strcmp.c \
+	Libft/ft_strcpy.c \
+	Libft/ft_strdel.c \
+	Libft/ft_strdup.c \
+	Libft/ft_strequ.c \
+	Libft/ft_stris.c \
+	Libft/ft_striter.c \
+	Libft/ft_striteri.c \
+	Libft/ft_strjoin.c \
+	Libft/ft_strlcat.c \
 	Libft/ft_strlen.c \
+	Libft/ft_strmap.c \
+	Libft/ft_strmapi.c \
+	Libft/ft_strncat.c \
+	Libft/ft_strncmp.c \
+	Libft/ft_strncpy.c \
+	Libft/ft_strnequ.c \
+	Libft/ft_strnew.c \
+	Libft/ft_strnstr.c \
+	Libft/ft_strrealloc.c \
+	Libft/ft_strrchr.c \
+	Libft/ft_strrev.c \
+	Libft/ft_strsplit.c \
+	Libft/ft_strstr.c \
+	Libft/ft_strsub.c \
+	Libft/ft_strtrim.c \
+	Libft/ft_tab.c \
+	Libft/ft_tolower.c \
+	Libft/ft_toupper.c \
 	Libft/ft_wcbytesize.c \
 	Libft/ft_wcsbytelen.c \
 	Libft/ft_wcscmp.c \
 	Libft/ft_wcslen.c \
 	Libft/ft_wcsnbytelen.c \
-	libft/ft_wcsnlen.c
-
+	Libft/ft_wcsnlen.c \
+	Libft/get_next_line.c
 OBJS = $(SRCS:.c=.o)
 
 INCL = -Iincludes/

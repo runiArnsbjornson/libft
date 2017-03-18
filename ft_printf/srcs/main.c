@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/30 11:33:05 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/12 19:24:16 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/17 13:08:28 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	zero_struct(t_flag *f)
 	f->lag_hh = 0;
 	f->lag_l = 0;
 	f->lag_ll = 0;
-	f->lag_L = 0;
+	f->lag_long = 0;
 	f->lag_j = 0;
 	f->lag_z = 0;
 	f->lag_dot = 0;
@@ -56,7 +56,7 @@ int		ft_handlers(va_list args, t_flag *f, int pc)
 		pc += char_handler(args, f);
 	else if (f->conv == 's' || f->conv == 'S')
 		pc += string_handler(args, f);
-	else if (f->conv == 'f' || f->conv == 'F' || f->conv == 'e' || f->conv == 'E')
+	else if (f->conv == 'f' || f->conv == 'F')
 		pc += float_handler(args, f);
 	else if (f->conv == '%')
 		pc += percent_handler(f);

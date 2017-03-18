@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/27 14:58:02 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/12 12:59:09 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/03/17 12:55:28 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ int			bin_handler(va_list args, t_flag *f)
 		f->lag_l = 1;
 	}
 	n = uint_size(0, args, f);
-	s = bin_to_string(buf, 32 + f->width + f->preci, n, f);
+	s = bin_to_string(buf, 64 + f->width + f->preci, n, f);
 	return (printer(s, f, ft_strlen(s)));
 }
