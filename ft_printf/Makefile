@@ -6,7 +6,7 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/09 13:29:45 by jdebladi          #+#    #+#              #
-#    Updated: 2017/03/23 16:40:11 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/04/20 12:43:20 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -95,6 +95,7 @@ SRCS = srcs/main.c \
 	Libft/ft_strncpy.c \
 	Libft/ft_strnequ.c \
 	Libft/ft_strnew.c \
+	Libft/ft_strnjoin.c \
 	Libft/ft_strnstr.c \
 	Libft/ft_strrealloc.c \
 	Libft/ft_strrchr.c \
@@ -104,6 +105,7 @@ SRCS = srcs/main.c \
 	Libft/ft_strsub.c \
 	Libft/ft_strtrim.c \
 	Libft/ft_tab.c \
+	Libft/ft_tabdel.c \
 	Libft/ft_tolower.c \
 	Libft/ft_toupper.c \
 	Libft/ft_wcbytesize.c \
