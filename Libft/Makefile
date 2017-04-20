@@ -6,7 +6,7 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 18:34:05 by jdebladi          #+#    #+#              #
-#    Updated: 2017/04/20 12:13:05 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/04/20 12:27:31 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,6 +94,7 @@ SRC = ft_abs.c \
 	ft_strsub.c \
 	ft_strtrim.c \
 	ft_tab.c \
+	ft_tabdel.c \
 	ft_tolower.c \
 	ft_toupper.c \
 	ft_wcbytesize.c \

@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:32:18 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/04/20 12:24:35 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/04/20 12:27:16 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,6 +131,7 @@ char			*ft_strstr(const char *big, const char *little);
 char			*ft_strsub(char const *s, unsigned int start, size_t len);
 char			*ft_strtrim(char const *s);
 char			**ft_tab(size_t col, size_t line);
+void			ft_tabdel(char **tab);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
 int				ft_wcbytesize(wchar_t wc);
