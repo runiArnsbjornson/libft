@@ -6,7 +6,7 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/09 13:29:45 by jdebladi          #+#    #+#              #
-#    Updated: 2017/04/20 12:43:20 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/04/20 12:55:15 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -150,4 +150,4 @@ fclean: clean
 re: fclean all
 	@echo "\033[K\033[32m*** Let's start anew ***\033[00m"
 
-.PHONY : all clean fclean re
+.PHONY : all clean fclean mclean re
