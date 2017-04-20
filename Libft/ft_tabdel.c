@@ -6,11 +6,11 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/14 09:19:16 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/04/14 17:12:06 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/04/20 12:49:53 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "libft.h"
 
 void	ft_tabdel(char **tab)
 {
