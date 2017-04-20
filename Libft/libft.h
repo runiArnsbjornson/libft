@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:32:18 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/22 12:06:30 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/04/20 12:24:35 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 # include <string.h>
 # include <unistd.h>
 # include <float.h>
+# include <stdarg.h>
 
 # define BUFF_SIZE 32
+# define CLN "\x1B[K"
 # define BOL "\x1B[01m"
 # define FAI "\x1B[02m"
 # define ITA "\x1B[03m"
@@ -119,6 +121,7 @@ int				ft_strncmp(const char *s1, const char *s2, size_t n);
 char			*ft_strncpy(char *dst, const char *src, size_t len);
 int				ft_strnequ(char const *s1, char const *s2, size_t n);
 char			*ft_strnew(size_t size);
+char			*ft_strnjoin(int nbr, ...);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strrealloc(char *s, size_t size);
