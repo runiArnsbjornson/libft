@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 18:20:46 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/04/23 16:05:54 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/04/23 18:51:20 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	strategy(t_data *data, int *ref)
 				swap = 0;
 			}
 		}
-		GRAPH ? display_graph(data) : 0;
+		GRAPH == 1 ? display_graph(data) : 0;
 		init(data, ref);
 	}
 }
