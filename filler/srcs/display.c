@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/21 09:54:15 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/04/23 16:31:16 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/04/23 21:42:16 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,38 +24,36 @@ void	display_percent(t_data *data, t_display *color)
 	int total;
 
 	total = data->board->x * data->board->y;
-	ft_putstr_fd(BRED"  "RES RED" = ", 2);
+	ft_putstr_fd(BMAG BOL"P1"RES MAG" = ", 2);
 	ft_putnbr_fd(color->red * 100 / total, 2);
 	ft_putstr_fd("% (", 2);
 	ft_putnbr_fd(color->red, 2);
-	ft_putstr_fd(" spaces)", 2);
-	ft_putstr_fd("\t"RES BGRN"  "RES GRN" = ", 2);
+	ft_putstr_fd(" spaces)\t"RES BGRN BLU"P2"RES GRN" = ", 2);
 	ft_putnbr_fd(color->grn * 100 / total, 2);
 	ft_putstr_fd("% (", 2);
 	ft_putnbr_fd(color->grn, 2);
-	ft_putstr_fd(" spaces)", 2);
-	ft_putstr_fd("\t"RES BWHT"  "RES WHT" empty spaces = ", 2);
+	ft_putstr_fd(" spaces)\t"RES BWHT"  "RES WHT" empty spaces = ", 2);
 	ft_putnbr_fd(color->wht, 2);
 	ft_putstr_fd("\n\n", 2);
-	usleep(100000 - total > 0 ? 100000 - total : 0);
+	usleep(10000 - total > 0 ? 10000 - total : 0);
 }
 
 void	display_color(t_data *data, t_pos *pos, t_display *color)
 {
-	if (data->board->board[pos->y][pos->x] == P1)
+	if (data->board->board[pos->y][pos->x] == P2)
 	{
 		color->grn++;
-		write(2, BGRN"  "RES, 12);
+		ft_putstr_fd(FAI BGRN"  "RES, 2);
 	}
-	else if (data->board->board[pos->y][pos->x] == P2)
+	else if (data->board->board[pos->y][pos->x] == P1)
 	{
 		color->red++;
-		write(2, BRED"  "RES, 12);
+		ft_putstr_fd(BMAG"  "RES, 2);
 	}
 	else
 	{
 		color->wht++;
-		write(2, BWHT"  "RES, 12);
+		ft_putstr_fd(BWHT"  "RES, 2);
 	}
 }
 
