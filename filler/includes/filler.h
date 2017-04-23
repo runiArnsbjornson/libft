@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/23 18:52:55 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/04/23 16:48:17 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/04/23 18:23:14 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,14 +64,14 @@ void			block(t_data *data, int *ref);
 /*
 ** display.c
 */
-void			init_display(t_display *color)
-void			display_percent(t_data *data, t_display *color)
-void			display_color(t_data *data, t_pos *pos, t_display *color)
+void			init_display(t_display *color);
+void			display_percent(t_data *data, t_display *color);
+void			display_color(t_data *data, t_pos *pos, t_display *color);
 void			display_graph(t_data *data);
 /*
 ** filler.c
 */
-void			strategy(t_data *data, int *ref)
+void			strategy(t_data *data, int *ref);
 void			get_piece(t_data *data, int *ref, char **res);
 void			get_board(t_board *board, int *ref, char **res);
 void			parse(t_data *data, int *ref);
