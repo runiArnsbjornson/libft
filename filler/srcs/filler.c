@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include <filler.h>
 
 void	strategy(t_data *data, int *ref)
 {

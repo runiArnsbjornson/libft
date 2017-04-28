@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include <filler.h>
 
 void	init_display(t_display *color)
 {

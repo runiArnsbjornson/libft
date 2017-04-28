@@ -16,20 +16,20 @@ SRC = srcs/filler.c srcs/search.c srcs/display.c srcs/main.c srcs/block.c
 
 OBJ = $(SRC:.c=.o)
 
-INCL = -Iincludes/filler.h
+INCL = -I Libft/libft -I includes
 
 LIBS = -Llibft -lftprintf
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS =
 
 %o: %c
 	@gcc -g -o $@ -c $< $(CFLAGS) $(INCL)
-	@echo "\033[K\x1B[34mCompiling\x1B[00m : \x1B[32m$^\x1B[00m"
+	@echo "\033[K\033[34mCompiling\033[00m : \033[32m$^\033[00m"
 
 $(NAME): $(OBJ)
 	@cd libft && make
 	@gcc $(LIBS) -g -o $(NAME) $(OBJ)
-	@echo "\x1B[K\x1B[32m$(NAME)\x1B[00m : \x1B[34mCreated\x1B[00m"
+	@echo "\033[K\033[32m$(NAME)\033[00m : \033[34mCreated\033[00m"
 	@cp -f $(NAME) players/
 
 all: $(NAME)
@@ -37,17 +37,17 @@ all: $(NAME)
 clean:
 	@cd libft && make clean
 	@rm -f $(OBJ)
-	@echo "\x1B[31mClean\x1B[01m Done\x1B[00m"
+	@echo "\033[31mClean\033[01m Done\033[00m"
 
 fclean: clean
 	@rm -f libft/libftprintf.a
 	@rm -f players/$(NAME) $(NAME)
-	@echo "\x1B[31mFclean\x1B[01m Done\x1B[00m"
+	@echo "\033[31mFclean\033[01m Done\033[00m"
 
 mclean: all clean
-	@echo "\x1B[K\x1B[33mMake && clean \x1B[01mDone\x1B[0m"
+	@echo "\033[K\033[33mMake && clean \033[01mDone\033[0m"
 
 re: fclean all
-	@echo "\x1B[32mRe\x1B[01m Done\x1B[0m"
+	@echo "\033[32mRe\033[01m Done\033[0m"
 
 .PHONY: all clean fclean mclean re
