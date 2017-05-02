@@ -11,16 +11,32 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdint.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t i;
+	long *d;
+	char		*cd;
+	const long	*s;
+	const char	*cs;
+	ssize_t		i;
 
-	i = 0;
-	while (i < n)
+	if ((uintptr_t)dst % sizeof(long) == 0 && (uintptr_t)src % sizeof(long) == 0
+	&& n % sizeof(long))
 	{
-		((char *)dst)[i] = ((char *)src)[i];
-		i++;
+		d = dst;
+		s = src;
+		i = -1; 
+		while (i++ < n / sizeof(long))
+			d[i] = s[i];
+	}
+	else
+	{
+		cd = dst;
+		cs = src;
+		i = -1;
+		while (i++ < n)
+			cd[i] = cs[i];
 	}
 	return (dst);
 }

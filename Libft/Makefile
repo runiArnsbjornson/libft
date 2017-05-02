@@ -12,7 +12,7 @@
 
 CC = gcc
 AR = ar rc
-INCL = libft.h
+INCL = .
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
 SRC = ft_abs.c \
@@ -114,14 +114,14 @@ all: $(NAME)
 
 clean:
 	@/bin/rm -f $(OBJ)
-	@echo "\033[31mRemoval\033[0m  " [ "*.o" ] "  \033[32mComplete\033[0m"
+	@echo "\033[31mClean \033[32mDone\033[0m"
 
 re: fclean all
 	@echo "\033[32m*** Let's start anew ***\033[00m"
 
 fclean: clean
 	@/bin/rm -f $(NAME)
-	@echo "\033[31mRemoval\033[0m" [ $(NAME) ] "\033[32mComplete\033[0m"
+	@echo "\033[31mFclean\033[32m Done\033[0m"
 
 $(NAME): $(OBJ)
 	@$(AR) $(NAME) $(OBJ)

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/filler.h"
+#include <filler.h>
 
 int		find(t_data *data, t_pos pos)
 {

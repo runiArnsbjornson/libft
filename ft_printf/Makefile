@@ -137,17 +137,14 @@ $(NAME): $(OBJS)
 clean:
 	@cd Libft && make clean
 	@/bin/rm -f $(OBJS)
-	@echo "\033[31mRemoval\033[0m  " [ "ft_printf/*.o" ] "  \033[32mComplete\033[0m"
-
-mclean: all clean
-	@echo "\033[K\033[32mMake && cleaned\033[00m"
+	@echo "\033[31mClean \033[35mDone\033[0m"
 
 fclean: clean
 	@cd Libft && make fclean
 	@/bin/rm -f $(NAME)
-	@echo "\033[31mRemoval\033[0m" [ $(NAME) ] "\033[32mComplete\033[0m"
+	@echo "\033[31mFclean \033[35mDone\033[0m"
 
 re: fclean all
 	@echo "\033[K\033[32m*** Let's start anew ***\033[00m"
 
-.PHONY : all clean fclean mclean re
+.PHONY : all clean fclean re
