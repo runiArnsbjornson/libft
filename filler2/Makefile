@@ -40,13 +40,13 @@ all: $(NAME) $(NAME_G)
 
 $(NAME): $(OBJ)
 	@cd libft && make
-	@gcc $(LIBS) -g -o $(NAME) $(OBJ)
+	@gcc $(LIBS) -g -o $(NAME) $(OBJ) $(INCL)
 	@echo "\033[K\033[32m$(NAME)\033[00m : \033[34mCreated\033[00m"
 	@cp -f $(NAME) players/
 
 $(NAME_G): $(OBJ_G)
 	@cd libft && make
-	@gcc $(LIBS) -g -o $(NAME_G) $(OBJ_G)
+	@gcc $(LIBS) -g -o $(NAME_G) $(OBJ_G) $(INCL)
 	@echo "\033[K\033[32m$(NAME_G)\033[00m : \033[34mCreated\033[00m"
 	@cp -f $(NAME_G) players/
 
