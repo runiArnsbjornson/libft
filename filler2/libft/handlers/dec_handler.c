@@ -20,7 +20,7 @@ int		sign_dec(char *buf, int i, t_flag *f, int len)
 			buf[--i] = '-';
 		else
 		{
-			i = buf[i] == '0' ? i : --i;
+			i -= buf[i] == '0' ? 0 : 1;
 			buf[i] = '-';
 		}
 	}
@@ -37,7 +37,7 @@ int		dec_format(char *buf, int i, t_flag *f, int len)
 			buf[--i] = '+';
 		else
 		{
-			i = buf[i] == '0' ? i : --i;
+			i -= buf[i] == '0' ? 0 : 1;
 			buf[i] = '+';
 		}
 	}
@@ -47,7 +47,7 @@ int		dec_format(char *buf, int i, t_flag *f, int len)
 			buf[--i] = ' ';
 		else
 		{
-			i = buf[i] == '0' ? i : --i;
+			i -= buf[i] == '0' ? 0 : 1;
 			buf[i] = ' ';
 		}
 	}

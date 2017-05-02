@@ -20,7 +20,7 @@ int		sign_float(char *buf, int i, t_flag *f, int len)
 			buf[--i] = '-';
 		else
 		{
-			i = buf[i] == '0' ? i : --i;
+			i -= buf[i] == '0' ? 0 : 1;
 			buf[i] = '-';
 		}
 	}
@@ -37,13 +37,13 @@ int		float_format(char *buf, int i, t_flag *f, int len)
 			buf[--i] = '+';
 		else
 		{
-			i = buf[i] == '0' ? i : --i;
+			i -= buf[i] == '0' ? 0 : 1;
 			buf[i] = '+';
 		}
 	}
 	if (f->lag_space && f->sign == 1 && !f->preci && !f->lag_plus)
 	{
-		i = buf[i] == '0' ? i : --i;
+		i -= buf[i] == '0' ? 0 : 1;
 		buf[i] = ' ';
 	}
 	return (i);

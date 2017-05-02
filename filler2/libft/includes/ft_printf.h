@@ -13,6 +13,7 @@
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
+# include <stdint.h>
 # include <stdio.h>
 # include <locale.h>
 # include <wchar.h>

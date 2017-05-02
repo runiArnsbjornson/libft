@@ -63,7 +63,7 @@ unsigned long long	uint_size(unsigned long long n, va_list args, t_flag *f)
 
 int					htag_format(char *buf, int i, t_flag *f, int len)
 {
-	len = ft_strlen(&buf[i]);
+	len = 0;
 	if (f->conv == 'o' || f->conv == 'O' || f->conv == 'x' || f->conv == 'X' ||
 	f->conv == 'p')
 	{
@@ -84,7 +84,7 @@ int					htag_format(char *buf, int i, t_flag *f, int len)
 				buf[--i] = '0';
 		}
 	}
-	return (i);
+	return (i + len);
 }
 
 int					zero_fill(char *buf, int i, t_flag *f, int len)
