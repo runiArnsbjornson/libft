@@ -6,13 +6,11 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 18:34:05 by jdebladi          #+#    #+#              #
-#    Updated: 2017/05/03 10:54:54 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/05/03 10:55:45 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
-
-CC = gcc
 
 INCL = .
 
@@ -114,7 +112,7 @@ all: $(NAME)
 
 %.o: %.c
 	@echo "\033[K\033[34mLibft :\033[0m [ Compiling :\033[33m $^\033[0m]\033[1A"
-	@$(CC) -g -o $@ -c $< $(CFLAGS) -I $(INCL)
+	@gcc -g -o $@ -c $< $(CFLAGS) -I $(INCL)
 
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $(OBJ)

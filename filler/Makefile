@@ -6,21 +6,21 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/03/26 15:29:45 by jdebladi          #+#    #+#              #
-#    Updated: 2017/04/23 15:19:09 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/05/03 10:59:03 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = jdebladi.filler
-
-SRC = srcs/filler.c srcs/search.c srcs/display.c srcs/main.c srcs/block.c
-
-OBJ = $(SRC:.c=.o)
 
 INCL = -I Libft/libft -I includes
 
 LIBS = -Llibft -lftprintf
 
 CFLAGS =
+
+SRC = srcs/filler.c srcs/search.c srcs/display.c srcs/main.c srcs/block.c
+
+OBJ = $(SRC:.c=.o)
 
 %o: %c
 	@gcc -g -o $@ -c $< $(CFLAGS) $(INCL)

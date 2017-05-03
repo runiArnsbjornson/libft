@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:32:18 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/04/20 12:27:16 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/05/03 10:45:44 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,29 +20,30 @@
 # include <stdarg.h>
 
 # define BUFF_SIZE 32
-# define CLN "\x1B[K"
-# define BOL "\x1B[01m"
-# define FAI "\x1B[02m"
-# define ITA "\x1B[03m"
-# define UDL "\x1B[04m"
-# define BLK "\x1B[30m"
-# define RED "\x1B[31m"
-# define GRN "\x1B[32m"
-# define YEL "\x1B[33m"
-# define BLU "\x1B[34m"
-# define MAG "\x1B[35m"
-# define CYN "\x1B[36m"
-# define WHT "\x1B[37m"
-# define BBLK "\x1B[40m"
-# define BRED "\x1B[41m"
-# define BGRN "\x1B[42m"
-# define BYEL "\x1B[43m"
-# define BBLU "\x1B[44m"
-# define BMAG "\x1B[45m"
-# define BCYN "\x1B[46m"
-# define BWHT "\x1B[47m"
-# define OVR "\x1B[53m"
-# define RES "\x1B[00m"
+# define TCLN "\e[1;1H\e[2J"
+# define CLN "\033[K"
+# define BOL "\033[01m"
+# define FAI "\033[02m"
+# define ITA "\033[03m"
+# define UDL "\033[04m"
+# define BLK "\033[30m"
+# define RED "\033[31m"
+# define GRN "\033[32m"
+# define YEL "\033[33m"
+# define BLU "\033[34m"
+# define MAG "\033[35m"
+# define CYN "\033[36m"
+# define WHT "\033[37m"
+# define BBLK "\033[40m"
+# define BRED "\033[41m"
+# define BGRN "\033[42m"
+# define BYEL "\033[43m"
+# define BBLU "\033[44m"
+# define BMAG "\033[45m"
+# define BCYN "\033[46m"
+# define BWHT "\033[47m"
+# define OVR "\033[53m"
+# define RES "\033[00m"
 
 typedef struct	s_list
 {
