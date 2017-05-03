@@ -6,21 +6,20 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 13:44:10 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/03/17 13:22:00 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/05/03 11:36:48 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# include <stdarg.h>
 # include <stdio.h>
 # include <locale.h>
 # include <wchar.h>
 # include <sys/types.h>
 # include <sys/uio.h>
 # include <fcntl.h>
-# include "libft.h"
+# include <libft.h>
 
 typedef struct		s_flag
 {

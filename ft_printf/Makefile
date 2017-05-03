@@ -6,13 +6,13 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/09 13:29:45 by jdebladi          #+#    #+#              #
-#    Updated: 2017/05/03 11:31:00 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/05/03 11:36:37 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-INCL = -I includes/
+INCL = -I includes/ -I libft/
 
 CFLAGS = -Wall -Wextra -Werror
 
