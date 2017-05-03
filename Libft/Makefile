@@ -6,14 +6,18 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 18:34:05 by jdebladi          #+#    #+#              #
-#    Updated: 2017/05/03 10:47:38 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/05/03 10:54:54 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
-INCL = .
-CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
+
+CC = gcc
+
+INCL = .
+
+CFLAGS = -Wall -Wextra -Werror
+
 SRC = ft_abs.c \
 	ft_atoi.c \
 	ft_bool_strchr.c \
@@ -103,6 +107,7 @@ SRC = ft_abs.c \
 	ft_wcsnbytelen.c \
 	ft_wcsnlen.c \
 	get_next_line.c
+
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
