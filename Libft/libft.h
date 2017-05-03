@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 18:32:18 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/05/02 11:59:23 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/05/03 10:45:44 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdarg.h>
 
 # define BUFF_SIZE 32
+# define TCLN "\e[1;1H\e[2J"
 # define CLN "\033[K"
 # define BOL "\033[01m"
 # define FAI "\033[02m"

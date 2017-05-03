@@ -6,12 +6,11 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 18:34:05 by jdebladi          #+#    #+#              #
-#    Updated: 2017/04/20 12:27:31 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/05/03 10:47:38 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-AR = ar rc
 INCL = .
 CFLAGS = -Wall -Wextra -Werror
 NAME = libft.a
@@ -112,20 +111,20 @@ all: $(NAME)
 	@echo "\033[K\033[34mLibft :\033[0m [ Compiling :\033[33m $^\033[0m]\033[1A"
 	@$(CC) -g -o $@ -c $< $(CFLAGS) -I $(INCL)
 
+$(NAME): $(OBJ)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib $(NAME)
+	@echo "\033[34mCompiling\033[0m" [ $(NAME) ] "\033[K\033[32mSuccessful\033[0m"
+
 clean:
 	@/bin/rm -f $(OBJ)
 	@echo "\033[31mClean \033[32mDone\033[0m"
-
-re: fclean all
-	@echo "\033[32m*** Let's start anew ***\033[00m"
 
 fclean: clean
 	@/bin/rm -f $(NAME)
 	@echo "\033[31mFclean\033[32m Done\033[0m"
 
-$(NAME): $(OBJ)
-	@$(AR) $(NAME) $(OBJ)
-	@ranlib $(NAME)
-	@echo "\033[34mCompiling\033[0m" [ $(NAME) ] "\033[K\033[32mSuccessful\033[0m"
+re: fclean all
+	@echo "\033[32m*** Re Done ***\033[00m"
 
 .PHONY : all clean fclean re
