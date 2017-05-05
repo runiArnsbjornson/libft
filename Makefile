@@ -6,7 +6,7 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 18:34:05 by jdebladi          #+#    #+#              #
-#    Updated: 2017/05/03 10:55:45 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/05/05 09:54:30 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -127,7 +127,9 @@ fclean: clean
 	@/bin/rm -f $(NAME)
 	@echo "\033[31mFclean\033[32m Done\033[0m"
 
-re: fclean all
+re: 
+	@$(MAKE) fclean
+	@$(MAKE) all
 	@echo "\033[32m*** Re Done ***\033[00m"
 
 .PHONY : all clean fclean re
