@@ -6,7 +6,7 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 18:34:05 by jdebladi          #+#    #+#              #
-#    Updated: 2017/05/05 09:54:30 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/05/08 12:57:27 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,7 @@ SRC = ft_abs.c \
 	ft_bool_strchr.c \
 	ft_bzero.c \
 	ft_ftoa.c \
+	ft_gnl.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \
