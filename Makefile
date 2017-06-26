@@ -6,22 +6,27 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 18:34:05 by jdebladi          #+#    #+#              #
-#    Updated: 2017/05/08 12:57:27 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/06/14 15:04:09 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-INCL = .
+INCL = libft.h
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wunused -Wextra -Werror -Weverything -fdiagnostics-show-option
 
-SRC = ft_abs.c \
+SRC = gnl.c \
+	ft_abs.c \
 	ft_atoi.c \
 	ft_bool_strchr.c \
 	ft_bzero.c \
+	ft_dequeue.c \
+	ft_enqueue.c \
 	ft_ftoa.c \
 	ft_gnl.c \
+	ft_inttab.c \
+	ft_inttabdel.c \
 	ft_isalnum.c \
 	ft_isalpha.c \
 	ft_isascii.c \
@@ -37,9 +42,12 @@ SRC = ft_abs.c \
 	ft_itoa_base.c \
 	ft_lpwr.c \
 	ft_lstadd.c \
+	ft_lstaddend.c \
 	ft_lstdel.c \
 	ft_lstdelone.c \
+	ft_lstfree.c \
 	ft_lstiter.c \
+	ft_lstlen.c \
 	ft_lstmap.c \
 	ft_lstnew.c \
 	ft_memalloc.c \
@@ -51,10 +59,15 @@ SRC = ft_abs.c \
 	ft_memmove.c \
 	ft_memset.c \
 	ft_occurence.c \
+	ft_put_error.c \
 	ft_putchar.c \
 	ft_putchar_fd.c \
 	ft_putendl.c \
 	ft_putendl_fd.c \
+	ft_putinttab.c \
+	ft_putlist.c \
+	ft_putnbrendl.c \
+	ft_putnbrendl_fd.c \
 	ft_putnbr.c \
 	ft_putnbr_fd.c \
 	ft_putstr.c \
@@ -66,6 +79,7 @@ SRC = ft_abs.c \
 	ft_split.c \
 	ft_sqrt.c \
 	ft_strcat.c \
+	ft_strccpy.c \
 	ft_strchr.c \
 	ft_strclr.c \
 	ft_strcmp.c \
@@ -94,6 +108,7 @@ SRC = ft_abs.c \
 	ft_strsplit.c \
 	ft_strstr.c \
 	ft_strsub.c \
+	ft_strtol.c \
 	ft_strtrim.c \
 	ft_tab.c \
 	ft_tabdel.c \
@@ -111,8 +126,8 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-%.o: %.c
-	@echo "\033[K\033[34mLibft :\033[0m [ Compiling :\033[33m $^\033[0m]\033[1A"
+%.o: %.c $(INCL)
+	@echo "\033[K\033[34mLibft :\033[0m [ Compiling :\033[33m $<\033[0m]\033[1A"
 	@gcc -g -o $@ -c $< $(CFLAGS) -I $(INCL)
 
 $(NAME): $(OBJ)

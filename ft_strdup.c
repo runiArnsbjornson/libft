@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 12:53:16 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/11/06 17:48:44 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/05/30 11:58:31 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 char	*ft_strdup(const char *src)
 {
-	int		i;
-	char	*str;
+	unsigned long	i;
+	char			*str;
 
 	i = 0;
 	while (src[i])
 		i++;
-	if ((str = malloc(sizeof(char) * (i + 1))) == NULL)
+	if (!(str = (char *)ft_memalloc(sizeof(char) * (i + 1))))
 		return (NULL);
 	i = 0;
 	while (src[i])

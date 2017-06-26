@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jdebladi <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:12:50 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/11/09 11:18:52 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/05/30 17:57:15 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	dtmp = dst;
 	stmp = src;
-	while (n--)
+	while (n)
+	{
 		*dtmp++ = *stmp++;
+		n--;
+	}
 	return (dst);
 }
