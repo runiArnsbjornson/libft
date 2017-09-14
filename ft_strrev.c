@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 15:25:32 by jdebladi          #+#    #+#             */
-/*   Updated: 2016/11/16 18:01:14 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/09/12 13:49:56 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,15 @@ char	*ft_strrev(char *s)
 {
 	char *start;
 	char *t;
-	char temp;
+	char tmp;
 
 	start = s;
 	t = ft_strchr(s, '\0');
-	--t;
-	while (s < t)
+	while (s < --t)
 	{
-		temp = *s;
-		*s = *t;
-		*t = temp;
-		++s;
-		--t;
+		tmp = *s;
+		*s++ = *t;
+		*t = tmp;
 	}
 	return (start);
 }

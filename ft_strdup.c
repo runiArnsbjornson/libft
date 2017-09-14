@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 12:53:16 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/05/30 11:58:31 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/09/14 09:30:41 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,12 @@
 
 char	*ft_strdup(const char *src)
 {
-	unsigned long	i;
-	char			*str;
+	size_t	len;
+	char	*str;
 
-	i = 0;
-	while (src[i])
-		i++;
-	if (!(str = (char *)ft_memalloc(sizeof(char) * (i + 1))))
+	len = ft_strlen(src) + 1;
+	if (!(str = (char *)ft_memalloc(sizeof(char) * (len))))
 		return (NULL);
-	i = 0;
-	while (src[i])
-	{
-		str[i] = src[i];
-		i++;
-	}
-	str[i] = '\0';
+	ft_memcpy(str, src, len);
 	return (str);
 }

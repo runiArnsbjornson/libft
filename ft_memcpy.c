@@ -6,12 +6,11 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/04 19:12:50 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/05/30 17:57:15 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/09/12 12:46:48 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdint.h>
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
@@ -20,10 +19,7 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 
 	dtmp = dst;
 	stmp = src;
-	while (n)
-	{
+	while (n-- != 0)
 		*dtmp++ = *stmp++;
-		n--;
-	}
 	return (dst);
 }

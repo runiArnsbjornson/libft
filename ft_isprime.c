@@ -6,15 +6,15 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/16 16:13:41 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/05/19 13:03:57 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/09/12 10:31:21 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprime(int nb)
+int	ft_isprime(unsigned long long nb)
 {
-	int div;
+	unsigned long long div;
 
 	if (nb == 1)
 		return (1);

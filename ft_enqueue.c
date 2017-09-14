@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/14 14:37:55 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/06/14 15:07:06 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/09/12 15:26:57 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_enqueue(t_queue *q, int new)
 	t_q *tmp;
 	t_q *current;
 
-	if (!(tmp = malloc(sizeof(*tmp))) || q == NULL)
+	if (!(tmp = ft_memalloc(sizeof(*tmp))) || q == NULL)
 	{
 		ft_put_error("Error ft_enqueue");
 		exit(0);

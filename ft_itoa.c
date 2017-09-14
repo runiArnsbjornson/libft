@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 18:29:12 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/05/19 13:03:25 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/09/12 10:47:03 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*ft_itoa(int n)
 	nb = (n < 0) ? n : -n;
 	while ((nb = nb / 10) != 0)
 		len++;
-	if ((ret = malloc(sizeof(char) * len + 1)) == NULL)
+	if ((ret = ft_memalloc(sizeof(char) * len + 1)) == NULL)
 		return (NULL);
 	if (n >= 0)
 		n = -n;

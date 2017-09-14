@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putinttab.c                                     :+:      :+:    :+:   */
+/*   ft_atol.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/06/01 13:15:18 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/06/22 13:31:40 by jdebladi         ###   ########.fr       */
+/*   Created: 2017/05/08 16:22:13 by jdebladi          #+#    #+#             */
+/*   Updated: 2017/09/12 17:33:33 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putinttab(int **tab, int col)
+long	ft_atol(const char *nptr)
 {
-	int x;
-	int y;
-	int i;
-
-	i = -1;
-	ft_printf("\t");
-	while (++i < col)
-		ft_printf(MAG "%d%s", i, i == col - 1 ? "\n" RES : "\t");
-	i = 0;
-	y = -1;
-	while (tab[++y] != NULL)
-	{
-		x = -1;
-		ft_printf(MAG "%d\t" RES, i++);
-		while (++x < col)
-			ft_printf("%s%d%s", tab[y][x] >= 0 ? GRN : RED,
-				tab[y][x], x == col - 1 ? "\n" RES : "\t" RES);
-	}
+	return ((long)ft_atoll(nptr));
 }

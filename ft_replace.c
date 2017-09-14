@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/21 11:52:44 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/05/19 13:32:23 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/09/12 15:27:26 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ char			*ft_replace(const char *s, const char *old, const char *new)
 	if (!old)
 		return ((char *)(uintptr_t)s);
 	len_new = ft_strlen(new);
-	if (!(ret = malloc(sizeof(char) * ft_len(s, old, len_new) + 1)))
+	if (!(ret = ft_memalloc(sizeof(char) * ft_len(s, old, len_new) + 1)))
 		return (NULL);
 	ret[0] = '\0';
 	while (*s)

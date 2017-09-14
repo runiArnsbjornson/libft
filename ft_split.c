@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/19 12:29:59 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/06/14 12:26:22 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/09/12 15:27:45 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ char					**ft_split(char *str)
 	unsigned long	k;
 	unsigned long	len;
 
-	if (!(ret = malloc(sizeof(char *) * (nb_word(str) + 1))) || !str)
+	if (!(ret = ft_memalloc(sizeof(char *) * (nb_word(str) + 1))) || !str)
 		return (NULL);
 	i = 0;
 	k = 0;
@@ -59,7 +59,7 @@ char					**ft_split(char *str)
 		while (ft_isspace(str[k]) == 1)
 			k++;
 		len = lenght(&str[k]);
-		if (!(ret[i] = malloc(sizeof(char) * (len + 1))))
+		if (!(ret[i] = ft_memalloc(sizeof(char) * (len + 1))))
 			return (NULL);
 		while (j <= len)
 			ret[i][j++] = str[k++];

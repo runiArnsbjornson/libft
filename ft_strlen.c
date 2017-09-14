@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 18:55:12 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/05/19 13:49:27 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/09/12 13:41:04 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *str)
 	size_t i;
 
 	i = 0;
-	while (str[i])
+	while (*str++ != '\0')
 		i++;
 	return (i);
 }

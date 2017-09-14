@@ -6,7 +6,7 @@
 #    By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/11/04 18:34:05 by jdebladi          #+#    #+#              #
-#    Updated: 2017/06/14 15:04:09 by jdebladi         ###   ########.fr        #
+#    Updated: 2017/09/12 17:35:49 by jdebladi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,15 +16,14 @@ INCL = libft.h
 
 CFLAGS = -Wall -Wunused -Wextra -Werror -Weverything -fdiagnostics-show-option
 
-SRC = gnl.c \
-	ft_abs.c \
-	ft_atoi.c \
+SRC = ft_atoi.c \
+	ft_atol.c \
+	ft_atoll.c \
 	ft_bool_strchr.c \
 	ft_bzero.c \
 	ft_dequeue.c \
 	ft_enqueue.c \
 	ft_ftoa.c \
-	ft_gnl.c \
 	ft_inttab.c \
 	ft_inttabdel.c \
 	ft_isalnum.c \
@@ -64,8 +63,6 @@ SRC = gnl.c \
 	ft_putchar_fd.c \
 	ft_putendl.c \
 	ft_putendl_fd.c \
-	ft_putinttab.c \
-	ft_putlist.c \
 	ft_putnbrendl.c \
 	ft_putnbrendl_fd.c \
 	ft_putnbr.c \
@@ -108,7 +105,6 @@ SRC = gnl.c \
 	ft_strsplit.c \
 	ft_strstr.c \
 	ft_strsub.c \
-	ft_strtol.c \
 	ft_strtrim.c \
 	ft_tab.c \
 	ft_tabdel.c \

@@ -6,7 +6,7 @@
 /*   By: jdebladi <jdebladi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 16:16:42 by jdebladi          #+#    #+#             */
-/*   Updated: 2017/05/19 13:58:31 by jdebladi         ###   ########.fr       */
+/*   Updated: 2017/09/12 15:48:46 by jdebladi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,5 @@
 
 int		ft_tolower(int c)
 {
-	if (c >= 65 && c <= 90)
-		return (c + 32);
-	else
-		return (c);
+	return (c >= 'A' && c <= 'Z' ? c + 32 : c);
 }
